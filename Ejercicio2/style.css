@@ -10,10 +10,30 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafcfe', endColorstr='#8ba7aa', GradientType=1 );
 }
 
+#gorro{
+    background-color:black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 fieldset {
     border-color:#bccb3e;
+    position: center;
 }
 
 form {
     background-color: #3CBC8D;
+    width: 50%;
+}
+
+#cabeza {
+    background-color: #f9d7a5;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-bottom: 10px;
 }
