@@ -33,7 +33,13 @@ form {
 
 #cabeza {
     background-color: #f9d7a5;
-    margin-left: 400px;
-    margin-right: 400px;
-    padding-bottom: 10px;
+    margin-left: 450px;
+    margin-right: 450px;
+    padding-bottom: 0.2px;
+}
+
+#cuerpo {
+    background-color: red;
+    margin-left: 10%;
+    margin-right: 10%;
 }
