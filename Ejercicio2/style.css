@@ -39,7 +39,13 @@ form {
 }
 
 #cuerpo {
-    background-color: red;
+    background-color: black;
     margin-left: 10%;
     margin-right: 10%;
+    color: white;
+}
+
+#inside {
+    padding-top: 10px;
+    margin-left: 20%;
 }
