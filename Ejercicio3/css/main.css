@@ -1,0 +1,16 @@
+table {
+    border: 1px solid grey;
+}
+
+.subtitulo {
+    text-align: center;
+}
+
+.titulo {
+
+    font-weight: bolder;
+    height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #69A0F3;
+}
