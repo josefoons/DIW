@@ -27,12 +27,20 @@ hr {
     color: orangered;
 } 
 
+#alinearMarcador {
+    width:10%; 
+    float:left; 
+    display:block;
+}
+
 #alinear {
-    width:25%; 
+    width:35%; 
     float:left; 
     display:block;
 }
 
 #partido {
     margin-left: 15%;
+    padding-bottom: 125px;
+    margin-top: 30px;
 }
