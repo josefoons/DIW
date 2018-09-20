@@ -1,16 +1,36 @@
-table {
-    border: 1px solid grey;
+#tablaGeneral {
+    width:22.7em; 
+    line-height: 1.4em; 
+    text-align:left; 
+    padding:.23em;
 }
 
-.subtitulo {
+#titulo {
+    text-align:center;
+    background-color:#69A0F3;
+    color:black;
+    color: #FFFFFF; 
+    font-size: 120%;
+}
+
+.textoPlano {
     text-align: center;
 }
 
-.titulo {
-
-    font-weight: bolder;
-    height: 35px;
+#imgCenter {
     text-align: center;
-    vertical-align: middle;
-    background-color: #69A0F3;
+}
+
+#columnaIzquierda{
+    text-align: left;
+}
+
+#informacion {
+    text-align: center;
+    background: #69A0F3; 
+    color: #FFFFFF;
+}
+
+#editar {
+    font-size: 0.85em;
 }
