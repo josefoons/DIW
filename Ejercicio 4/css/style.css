@@ -2,8 +2,13 @@ body {
     font-family: sans-serif, "Oswald";
 }
 
+hr {
+    clear:both;
+    background-color: lightgrey;
+}
 
-#centro{
+#centro {
+    margin-left: 35%;
     color: #6A6F69;
 }
 
@@ -22,12 +27,12 @@ body {
     color: orangered;
 } 
 
-#centro {
-    margin-left: 35%;
-}
-
 #alinear {
     width:25%; 
     float:left; 
     display:block;
+}
+
+#partido {
+    margin-left: 15%;
 }
