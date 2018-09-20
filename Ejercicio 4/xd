@@ -1,0 +1,28 @@
+        <div class="clearfix equipos">
+
+            <div class="left equipo">
+              <div class="clearfix">
+                <div class="left escudo">
+                                <img src="/images/escudos/191.png" itemprop="image">
+                            </div>
+                <div class="right marcador">
+                  <span itemprop="attendee">Valencia CF</span>
+                  <strong id="js_marcador_local">0</strong>
+                </div>
+              </div>
+                    </div>
+            <div class="right equipo">
+              <div class="clearfix">
+                <div class="left marcador">
+                  <strong id="js_marcador_visitante">2</strong>
+                  <span itemprop="attendee">Juventus</span>
+                </div>
+                <div class="right escudo">
+                                <img src="/images/escudos/Juventus.png" itemprop="image">
+                            </div>
+              </div>
+              <div class="goles_minutos">45' Miralem Pjanic, 51' Miralem Pjanic</div>      </div>
+      
+            <meta itemprop="startDate" content="2018-09-19 21:00:00+02">
+            <meta itemprop="endDate" content="2018-09-19 21:00:00+02">
+          </div>

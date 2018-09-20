@@ -1,0 +1,26 @@
+hr {
+    background-color: lightgrey;
+  }
+
+#centro{
+    color: #6A6F69;
+}
+
+#centro ul {
+    display: table-row;
+}
+
+#centro ul li{
+    margin: 2em;
+    padding: 1em;
+    display: table-cell;
+    font-weight: bold;
+}
+
+#centro ul li:hover{
+    color: orangered;
+} 
+
+#centro {
+    margin-left: 35%;
+}
