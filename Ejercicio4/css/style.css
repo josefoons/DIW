@@ -34,7 +34,7 @@ hr {
 }
 
 #alinear {
-    width:35%; 
+    width:25%; 
     float:left; 
     display:block;
 }
@@ -43,4 +43,21 @@ hr {
     margin-left: 15%;
     padding-bottom: 125px;
     margin-top: 30px;
+}
+
+.derecha {
+    float: right;
+}
+
+#goles {
+    float: right;
+    margin-right: 40%;
+}
+
+#marcador {
+    font-size: 70px;
+}
+
+#nombre {
+    font-size: 20px;
 }
