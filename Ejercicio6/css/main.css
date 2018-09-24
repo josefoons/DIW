@@ -1,14 +1,52 @@
-.general {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: darkgrey;
+}
 
+
+.general {
     background: #fff;
     line-height: 18px;
     padding: 20px 20px 0 20px;
     position: relative;
     border: red;
     background: #fff;
-
 }
 
-#titulo {
-    
+#titulo {   
+    color: #004676;
+    font-size: 18px;
+}
+
+hr {
+    background-color: #dddddd;
+}
+
+#derecha {
+    float: right;
+}
+
+#izquierda {
+    float: left;
+}
+
+div#footer {
+
+    margin-top: 25px;
+    background-color: #ececec;
+    height: 60px;
+    border-top: #c0bebe solid 1px;
+  }
+
+#footer a {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    color: #8a8a8a;
+}
+
+#opciones a {
+    font-size: 15px;
+    color: darkblue;
 }
