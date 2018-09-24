@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#all {
+    height: 150px;
+    width: 62%;
+    background-color: #eee;
+}
+.mensaje {
+    background-color: #eee;
+    padding: 16px;
+    height: 100px;
+    float: left;
+    width: 350px;
+}
+
+.mensaje img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 60%;
+    width: 10px;
+    height: 80px;
+}
+
+.mensaje span {
+    font-size: 20px;
+    margin-right: 15px;
+
+}
+
+#tuit {
+    margin-left: 110px;
+}
+
+#hastag {
+    color: blue;
+}
+
+#autor {
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+}
+
+#sender {
+    font-size: 10px;
+    color: #959595;
+    display: inline-block;
+}
