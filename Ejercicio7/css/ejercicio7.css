@@ -3,24 +3,23 @@ body {
 }
 
 #all {
-    height: 150px;
     width: 62%;
     background-color: #eee;
+    display: flex;
 }
+
 .mensaje {
-    background-color: #eee;
-    padding: 16px;
-    height: 100px;
-    float: left;
-    width: 350px;
+    margin: 3px;
+    padding: 5px;
 }
 
 .mensaje img {
     float: left;
     margin-right: 20px;
     border-radius: 60%;
-    width: 10px;
     height: 80px;
+    width: 80px;
+    box-shadow: 3px 3px #D3D2D2;
 }
 
 .mensaje span {
@@ -30,11 +29,12 @@ body {
 }
 
 #tuit {
-    margin-left: 110px;
+    margin-left: 100px;
 }
 
 #hastag {
     color: blue;
+    font-size: 18px;
 }
 
 #autor {
@@ -43,8 +43,7 @@ body {
     font-size: 15px;
 }
 
-#sender {
+ #sender {
     font-size: 10px;
     color: #959595;
-    display: inline-block;
 }
