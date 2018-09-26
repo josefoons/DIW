@@ -1,58 +1,42 @@
 body {
-    font-family: "Segoe UI";
-    color: rgb(68, 68, 68);
+    font-family: Arial, sans-serif;
 }
 
-.imagenArriba {
-    width: 34%;
+#superior{
+    float: top;
+    width: 1100px;
+    height: 250px;
+    padding-top: 40px;
+    padding-left: 40px;
+    margin: auto;
+}
+
+#inferior{
+    background-color:#f5f5f5;
+    float: bottom;
+    width: 1100px;
+    height: 250px;
+    margin: auto;
+    padding-top: 40px;
+    padding-left: 60px;
+}
+
+h2{
+    font-weight: 100;
+}
+
+#imagenArriba{
     float: left;
-    margin-top: 80px;
-    margin-left: 60px;
-    margin-right: 30px;
 }
 
-#textoArriba {
-    left: 30%;
-    padding-top: 100px;
+
+#imagenAbajo{
+    position: absolute;
+    left:980px;
+    top: 350px;
+    width: 350px;
 }
 
-#textoArriba h2 {
-    font-weight: 200;
-    margin-bottom: 3.5rem;
-}
-
-#textoArriba p {
-    font-weight: 400;
-    margin: 0 0 10px;
-    line-height: 4rem;
-    font-size: 15px;
-    
-}
-
-.imagenAbajo {
-    width: 34%;
-    float: right;
-    margin-right: 60px;
-    margin-left: 30px;
-}
-
-#textoAbajo {
-    padding-top: 100px;
-}
-
-#textoAbajo h2 {
-    font-weight: 200;
-    margin-bottom: 3.5rem;
-}
-
-#textoAbajo p {
-    font-weight: 400;
-    margin: 0 0 10px;
-    line-height: 4rem;
-    font-size: 15px;
-    
-}
-
-.clear {
-    clear: both;
+p{
+    line-height: 35px;
 }
