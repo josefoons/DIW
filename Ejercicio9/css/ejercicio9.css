@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  #general {
+      padding: 150px;
+  }
+
+  .perfil {
+    color: #496b82;
+    display: block;
+    font-weight: 290;
+    line-height: 24px;
+    padding-right: 20px;
+    position: absolute;
+    width: 90px;
+    padding-left: 9%;
+  }
+  
+  .perfil img{
+    border-radius: 50%;
+    max-width: 70px;
+  }
+  
+  .articulo {
+    box-sizing: border-box;
+    font-weight: 300;
+    line-height: 24px;
+    padding-left: 17%;
+    width: 1100px;
+  }
+  
+  .titulo {
+    color: #00adf0;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 10px;
+  }
+  
+  .autor {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 7px;
+    min-height: 24px;
+    font-style: italic;
+    font-size: 14px;
+  }
+  
+  .autor a {
+    text-decoration: none;
+    color: #53c1e2;
+  }
+  
+  .tags {
+    clear: both;
+    color: grey;
+    display: block;
+    font-size: 12px;
+  }
+  
+  .tags a {
+    color: grey;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  .text {
+    color: grey;
+    line-height: 22px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .text a {
+    box-sizing: border-box;
+    color: #53bfe0;
+    display: block;
+    float: right;
+    margin-top: 30px;
+    font-weight: 400;
+    margin-right: 80px;
+    max-width: 100%;
+    text-decoration: none;
+  }
