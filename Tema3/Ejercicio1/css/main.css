@@ -1,9 +1,9 @@
 a {
     padding: 10px;
     text-decoration: none;
+    box-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 5px grey;
     border-radius: 3px;
-    box-shadow: 2px 2px black;
-    text-shadow: 2px 2px grey;
 }
 
 #botoncitos {
@@ -24,10 +24,11 @@ a {
 }
 
 .botonEscher {
-    background: repeating-linear-gradient(120deg, white, black 10%);
+    background: repeating-linear-gradient(120deg, grey, black 10%);
     color: white;
     font-style: italic;
     font-size: 30px;
-    box-shadow: 3px 3px black;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 3px 3px 5px black;
     border: 1px solid black;
 }
