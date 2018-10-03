@@ -1,0 +1,35 @@
+nav {
+    margin-left: 30%;
+    margin-top: 10%;
+    background: lightgrey;
+    margin-right: 32.5%;
+}
+
+nav ul {
+    display: table-row;
+}
+
+
+nav ul li img {
+    width: 50px;
+    margin-left: 10px;
+}
+
+
+nav ul li img:hover {
+    transition-delay: 0s;
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease;
+    width: 100px;
+}
+
+nav ul li{
+    margin: 2em;
+    padding: 1em;
+    display: table-cell;
+}
+
+nav ul li:active{
+    cursor: crosshair;
+}
