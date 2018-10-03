@@ -11,9 +11,10 @@ a {
 }
 
 .botonRojo {
-    background: red;
-    font-family: sans-serif;
+    background: rgb(180, 0, 0);
     color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 5px black;
 }
 .botonMondrian{
     background: linear-gradient(45deg, blue 46%, red 8%, yellow 54%);
