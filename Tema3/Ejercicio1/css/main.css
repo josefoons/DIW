@@ -1,0 +1,33 @@
+a {
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px black;
+    text-shadow: 2px 2px grey;
+}
+
+#botoncitos {
+    margin: 50px;
+}
+
+.botonRojo {
+    background: red;
+    font-family: sans-serif;
+    color: white;
+}
+.botonMondrian{
+    background: linear-gradient(45deg, blue 46%, red 8%, yellow 54%);
+    font-family: fantasy;
+    color: white;
+    border: 2px solid black;
+    font-size: 30px;
+}
+
+.botonEscher {
+    background: repeating-linear-gradient(120deg, white, black 10%);
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+    box-shadow: 3px 3px black;
+    border: 1px solid black;
+}
