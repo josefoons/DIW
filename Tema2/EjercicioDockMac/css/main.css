@@ -1,39 +1,29 @@
 nav {
-    transition-duration: 1s;
-    transition-property: all;
-    transition-timing-function: ease;
-    margin-left: 30%;
+    margin-left: 20%;
     margin-top: 10%;
     background: lightgrey;
-    margin-right: 35%;
-}
-
-nav:hover {
-    transition-duration: 1s;
-    transition-property: all;
-    transition-timing-function: ease;
-    margin-right: 32.5%;
+    margin-right: 24.4%;
+    padding-left: 10px;
 }
 
 nav ul {
     display: table-row;
 }
 
-
 nav ul li img {
     margin-left: 10px;
-    transition-duration: 1s;
+    transition-duration: 500ms;
     transition-property: all;
-    transition-timing-function: ease;
-    width: 50px;
+    transition-timing-function: ease-in-out;
+    width: 100px;
 }
 
 
 nav ul li img:hover {
-    transition-duration: 1s;
+    transition-duration: 200ms;
     transition-property: all;
-    transition-timing-function: ease;
-    width: 100px;
+    transition-timing-function: ease-in-out;
+    transform: scale(1.5);
 }
 
 
@@ -61,10 +51,11 @@ nav ul li{
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -70px;
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .tooltip .tooltiptext::after {
