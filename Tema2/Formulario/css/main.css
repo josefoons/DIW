@@ -1,0 +1,53 @@
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cuadro {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 97.5%;
+    float: left;
+}
+
+.texto {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.escribir {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+input:required:invalid:focus {
+    transform: rotate(-10deg);
+}
