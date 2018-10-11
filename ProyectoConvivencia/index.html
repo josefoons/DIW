@@ -17,6 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </head>
+<!-- col-md-auto -->
 
 <body>
     <div class="todo">
@@ -63,7 +64,7 @@
                     <div class="form-group row">
                         <label for="fechaAlumno" class="col-sm-2 col-form-label">Fecha</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="fechaAlumno" placeholder="Fecha del Incidente">
+                            <input type="date" class="form-control" id="fechaAlumno">
                         </div>
                     </div>
                 </div>
@@ -71,7 +72,7 @@
                     <div class="form-group row">
                         <label for="horaAlumno" class="col-sm-2 col-form-label">Hora</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="horaAlumno" placeholder="Hora del Incidente">
+                            <input type="time" class="form-control" id="horaAlumno">
                         </div>
                     </div>
                 </div>
@@ -85,46 +86,73 @@
                 </div>
             </div>
             <p>En aplicació de l'article 37 del decret 39/08 sobre drets i deures, es comunica al pare/mare de l'alumne
-                la
-                imposició de la següent mesura correctora:
+                la imposició de la següent mesura correctora:
             </p>
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Compareixença davant el cap d'estudis/director
-                </label>
+                <label>Compareixença davant el cap d'estudis/director</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Retirada d'aparells electrònics(1)
-                </label>
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                <label>Retirada d'aparells electrònics(1)</label>
             </div>
             <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                            Privació del temps de recreació el dies 
-                            <input type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno">
-                    </label>
-
-
-
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                <div class="row">
+                    <div class="col-md-auto">
+                        Privacio de temps de recreacio el dies
+                    </div>
+                    <div class="col-md-auto">
+                        <input type="date" id="inicioPrivacio" /> fins <input type="date" id="finalPrivacio" />
+                    </div>
+                </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Default checkbox
-                </label>
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                <label>Realitzacio de les següents tasques educadores</label>
+                <input type="text" class="form-control" id="tasquesEducadoras" placeholder="Lista de tasques">
+                <br />
+                <div class="row">
+                    <div class="col-md-auto">
+                        els dies
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="diasTasques" placeholder="Dies tasques">
+                    </div>
+                    <div class="col-md-auto">
+                        i amb l'horari
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="horariTasques" placeholder="Horari tasques">
+                    </div>
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                <label>Suspensio del dret de participar en activitats extraescolars i complementaries des de </label>
+                <div class="row">
+                    <div class="col"><input class="form-control" type="date" id="inicioSuspensioDret"> </div>
+                    <div class="col-md-auto">fins</div>
+                    <div class="col"><input class="form-control" type="date" id="finalSuspensioDret"></div>
+                    <div class="col-md-auto"> (2)</div>
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                <label>Suspensio del dret de l'asistencia a les classes des de </label>
+                <div class="row">
+                    <div class="col"><input class="form-control" type="date" id="inicioSuspensioDret"> </div>
+                    <div class="col-md-auto">fins</div>
+                    <div class="col"><input class="form-control" type="date" id="finalSuspensioDret"></div>
+                    <div class="col-md-auto"> (2)</div>
+                </div>
             </div>
 
 
 
         </form>
     </div>
-
-
-
 </body>
 
 </html>
