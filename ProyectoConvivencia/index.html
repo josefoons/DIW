@@ -7,7 +7,7 @@
     <title>Convivencia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="main.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -16,19 +16,20 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </head>
 <!-- col-md-auto -->
 
 <body>
     <div class="container">
         <h1>COMUNICACIO DE MESURES CORRECTORES</h1>
-        <form id="partes">
+        <form onsubmit="return onSubmit(this)">
             <div class="row">
                 <div class="col-6">
                     <div class="form-group row">
                         <label for="alumnoNombre" class="col-sm-2 col-form-label">Alumno</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno">
+                            <input type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno" required>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
                     <div class="form-group row">
                         <label for="grupoAlumno" class="col-sm-2 col-form-label">Grupo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="grupoAlumno" placeholder="Grupo del alumno">
+                            <input type="text" class="form-control" id="grupoAlumno" placeholder="Grupo del alumno" required>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@
                     <div class="form-group row">
                         <label for="alumnoProfesor" class="col-sm-2 col-form-label">Profesor/a</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="alumnoProfesor" placeholder="Nombre del Profesor">
+                            <input type="text" class="form-control" id="alumnoProfesor" placeholder="Nombre del Profesor" required>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                     <div class="form-group row">
                         <label for="fechaAlumno" class="col-sm-2 col-form-label">Fecha</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="fechaAlumno">
+                            <input type="date" class="form-control" id="fechaAlumno" required>
                         </div>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
                     <div class="form-group row">
                         <label for="horaAlumno" class="col-sm-2 col-form-label">Hora</label>
                         <div class="col-sm-10">
-                            <input type="time" class="form-control" id="horaAlumno">
+                            <input type="time" class="form-control" id="horaAlumno" required>
                         </div>
                     </div>
                 </div>
@@ -80,7 +81,7 @@
                     <div class="form-group row">
                         <label for="lugarAlumno" class="col-sm-2 col-form-label">Lugar</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="lugarAlumno" placeholder="Lugar del Incidente">
+                            <input type="text" class="form-control" id="lugarAlumno" placeholder="Lugar del Incidente" required>
                         </div>
                     </div>
                 </div>
@@ -151,23 +152,39 @@
             <br />
             <div>
                 <h3>Descripcio del incident</h3>
-                <textarea class="col" id="descipcioIncident"></textarea>
+                <textarea class="col" id="descipcioIncident" required></textarea>
             </div>
             <br />
             <div>
                 <p>Tipificacio (3) de l'incident segons l'article 35:</p>
-                <select class="custom-select">
+                <select class="custom-select" required>
                     <option selected>Selecciona la tipificacio</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Les faltes de puntualitat injustificades</option>
+                    <option value="2">Les faltes d'assistència injustificades</option>
+                    <option value="3">Els actes que alteren el normal desenvolupament de les activitats del centre educatiu, especialment els que alteren el normal desenvolupament de les classes</option>
+                    <option value="4">Els actes d'indisciplina</option>
+                    <option value="5">Els actes d'incorreció o desconsideració, les injúries i les ofenses contra els membres de la comunitat educativa</option>
+                    <option value="6">El furt o deteriorament intencionat d'inmobles, materials, documentació o recursos del centre</option>
+                    <option value="7">El furt o deteriorament intencionat dels béns o materials dels membres de la comunitat educativa</option>
+                    <option value="8">Les accions que puguen ser perjudicials per a la integritat i la salut dels membres de la comunitat educativa</option>
+                    <option value="9">La negativa sistemàtica a portar el material necessari per al desenvolupament del procés d'ensenyament-aprenentatge</option>
+                    <option value="10">La negativa a traslladar la informació facilitada als pares, mares, tutors o tutores per part del centre i viceversa</option>
+                    <option value="11">L'alteració o manipulació de la documentació facilitada als pares, mares, tutors o tutores per part del centre</option>
+                    <option value="12">La suplantació de la personalitat dels membres de la comunitat escolar.</option>
+                    <option value="13">La utilització inadequada de les tecnologies de la informació i comunicació durant les activitats que es realitzen al centre educatiu</option>
+                    <option value="14">L'ús de telèfons mòbils, aparells de so i altres aparells electrònics aliens al procés d'ensenyament-aprenentatge. Durant les activitats que es realitzen al centre educatiu</option>
+                    <option value="15">Els actes que dificulten o impedisquen el dret i el deure d l'estudi dels seus companys i companyes</option>
+                    <option value="16">La incitació o estímul a cometre una falta contrària a les normes de convivència.</option>
+                    <option value="17">La negativa al compliment de les mesures correctores adoptades davant de conductes contràries a les normes de convivència</option>
+                    <option value="18">L'ús inadequat de les infraestructures i béns o equips materials del centre</option>
+                    <option value="19">La desobediència en el compliment de les normes de caràcter propi del centre i que estiguen incloses en el seu projecte educatiu</option>
                 </select>
             </div>
             <br />
             <div>
                 <p>La comunicacó als pares es fa pels següents mitjans: Telefon
-                    <input type="text" class="col-md-auto" id="telefonPares" placeholder="Telefono padres">
-                    per correu <input type="email" class="col-md-auto" id="emailPadres" placeholder="Email padres">
+                    <input type="text" class="col-md-auto" id="telefonPares" placeholder="Telefono padres" required>
+                    per correu <input type="email" class="col-md-auto" id="emailPadres" placeholder="Email padres" required>
                     o per mig de l'Alumne. Amb compareixença del pare/madre/tutor legal.
                 </p>
 
@@ -175,7 +192,7 @@
                     <div class="col">
                     </div>
                     <div class="col">
-                        Paiporta, <input type="date" id="fechaFirma" />
+                        Paiporta, <input type="date" id="fechaFirma" required />
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                 </div>
             </div>
             <br />
-            <input type="submit" value="Enviar" />
+            <input type="submit" />
 
         </form>
     </div>
@@ -205,3 +222,35 @@
 </body>
 
 </html>
+
+<!--
+                <div class="mesura">
+                <p id="uno">(1) El pare o la mare de l'alumne podrá retirar l'aparell a partir del dia següent de rebre esta notificació en la direcció d'estudis.</p>
+                <p id="dos">(2) El pare o la mare de l'alumne disposa d'un termini de 10 dies a partir de rebre esta comunicació per al preceptiu trámit d'audiència amb el professor
+                    que ha imposat la mesura correctora. </p>
+                <p id="tres">(3) Tipificació:</p>
+                <ol type="a">
+                    <li>Les faltes de puntualitat injustificades</li>
+                    <li>Les faltes d'assistència injustificades</li>
+                    <li>Els actes que alteren el normal desenvolupament de les activitats del centre educatiu, especialment els que alteren el normal desenvolupament de les classes</li>
+                    <li>Els actes d'indisciplina</li>
+                    <li>Els actes d'incorreció o desconsideració, les injúries i les ofenses contra els membres de la comunitat educativa</li>
+                    <li>El furt o deteriorament intencionat d'inmobles, materials, documentació o recursos del centre</li>
+                    <li>El furt o deteriorament intencionat dels béns o materials dels membres de la comunitat educativa</li>
+                    <li>Les accions que puguen ser perjudicials per a la integritat i la salut dels membres de la comunitat educativa</li>
+                    <li>La negativa sistemàtica a portar el material necessari per al desenvolupament del procés d'ensenyament-aprenentatge</li>
+                    <li>La negativa a traslladar la informació facilitada als pares, mares, tutors o tutores per part del centre i viceversa</li>
+                    <li>L'alteració o manipulació de la documentació facilitada als pares, mares, tutors o tutores per part del centre</li>
+                    <li>La suplantació de la personalitat dels membres de la comunitat escolar.</li>
+                    <li>La utilització inadequada de les tecnologies de la informació i comunicació durant les activitats que es realitzen al centre educatiu</li>
+                    <li>L'ús de telèfons mòbils, aparells de so i altres aparells electrònics aliens al procés d'ensenyament-aprenentatge. Durant les activitats que es realitzen al centre educatiu</li>
+                    <li>Els actes que dificulten o impedisquen el dret i el deure d l'estudi dels seus companys i companyes</li>
+                    <li>La incitació o estímul a cometre una falta contrària a les normes de convivència.</li>
+                    <li>La negativa al compliment de les mesures correctores adoptades davant de conductes contràries a les normes de convivència</li>
+                    <li>L'ús inadequat de les infraestructures i béns o equips materials del centre</li>
+                    <li>La desobediència en el compliment de les normes de caràcter propi del centre i que estiguen incloses en el seu projecte educatiu</li>
+               </ol>
+</div>
+
+
+-->
