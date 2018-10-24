@@ -21,8 +21,14 @@
 <!-- col-md-auto -->
 
 <body>
+
     <div class="container">
-        <h1 class="text-center">INCIDÈNCIA</h1>
+        <div class="encabezado">
+            <img class="w-25 p-3 float-left" src="img/logo.png">
+            <img class="w-25 p-3 float-right" src="img/generalitat.jpg">
+        </div>
+        <div class="clearfix"></div>
+        
         <form onsubmit="return onSubmit(this)">
             <div class="row">
                 <div class="col-6">
@@ -99,7 +105,7 @@
                     <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center">
                         <option value="0" hidden>Selecciona falta</option>
                         <option value="leve">Leve</option>
-                        <option value="grave">Grave</option>
+                        <option value="grave">Greu</option>
                     </select>
                 </h4>
             </div>
