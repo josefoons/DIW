@@ -1,18 +1,18 @@
 module.exports = (app) => {
-    const investigadores = require('../controllers/investigador.controller.js');
+    const minions = require('../controllers/minions.controller.js');
 
-    // Create a new investigadores
-    app.post('/investigadores', investigadores.create);
+    // Create a new minion
+    app.post('/minions', minions.create);
 
-    // Retrieve all investigadores
-    app.get('/investigadores', investigadores.findAll);
+    // Retrieve all minions
+    app.get('/minions', minions.findAll);
 
-    // Retrieve a single investigadores with investigadorId
-    app.get('/investigadores/:investigadorId', investigadores.findOne);
+    // Retrieve a single minions with minionId
+    app.get('/minions/:minionId', minions.findOne);
 
-    // Update a investigadores with investigadorId
-    app.put('/investigadores/:investigadorId', investigadores.update);
+    // Update a minions with minionId
+    app.put('/minions/:minionsId', minions.update);
 
-    // Delete a investigadores with investigadorId
-    app.delete('/investigadores/:investigadorId', investigadores.delete);
+    // Delete a minions with minionId
+    app.delete('/minions/:minionsId', minions.delete);
 }
