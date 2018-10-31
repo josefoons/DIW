@@ -58,5 +58,5 @@ const MinionGraveSchema = mongoose.Schema({
     });
 
 
-module.exports = mongoose.model('Minion', MinionLeveSchema);
-module.exports = mongoose.model('Minion', MinionGraveSchema);
+module.exports = mongoose.model('MinionLeve', MinionLeveSchema);
+module.exports = mongoose.model('MinionGrave', MinionGraveSchema);
