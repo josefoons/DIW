@@ -10,13 +10,59 @@ exports.create = (req,res)=>{
            message:"Minion Vacio..." 
         });
     }
+    
+    if(req.body.tipoFalta == "leve") {
+         const Minion = new Minion({
+            nombreAlumno: req.body.nombreAlumno || "No nombre",
+            grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+            nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
+            horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
+            fechaAlumno: req.body.fechaAlumno || "Fecha del incidente",
+            horaAlumno: req.body,horaAlumno,
+            lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
+            descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
+            inicioPrivacion: req.body.inicioPrivacion,
+            finalPrivacion: req.body.finalPrivacion,
+            tareasEducadoras: req.body.tareasEducadoras,
+            diasTareas: req.body.tareasEducadoras,
+            horarioTareas: req.body.horarioTareas,
+            inicioSuspensionDrets: req.body.inicioSuspensionDrets,
+            finalSuspensionDrets: req.body.finalSuspensionDrets,
+            inicioSuspensioDretClases: req.body.inicioSuspensioDretClases,
+            finalSuspensioDretClases: req.body.finalSuspensioDretClases,
+            telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
+            emailPadres: req.body.emailPadres || "Sin email de padres",
+            fechaHoy: req.body.fechaHoy || "Fecha de hoy no introducida",
+            comparenciaDirector: req.body.comparenciaDirector,
+            retiradaElectronica: req.body.retiradaElectronica,
+            privacionTiempo: req.body.privacionTiempo,
+            hacerTareasEducadoras: req.body.hacerTareasEducadoras,
+            suspensionActividadesExtracolares: req.body.suspensionActividadesExtracolares,
+            suspensionDretClases: req.body.finalSuspensioDretClases,
+            tipificacion: req.body.tipificacion || "Sin tipificacion",
+            vistoProfesor: req.body.vistoProfesor || "No visto por profesor",
+            vistoDirector: req.body.vistoDirector || "No visto por director"
+        })
+    } else {
+        const Minion = new Minion({
+            nombreAlumno: req.body.nombreAlumno || "No nombre",
+            grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+            nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
+            horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
+            fechaAlumno: req.body.fechaAlumno || "Fecha del incidente",
+            horaAlumno: req.body,horaAlumno,
+            lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
+            descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
+            telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
+            emailPadres: req.body.emailPadres || "Sin email de padres",
+            fechaHoy: req.body.fechaHoy || "Fecha de hoy no introducida",
+            tipificacion: req.body.tipificacion || "Sin tipificacion",
+            vistoProfesor: req.body.vistoProfesor || "No visto por profesor",
+            vistoDirector: req.body.vistoDirector || "No visto por director"
+        })
+    }
 
-    const Minion = new Minion({
-        nombre: req.body.nombre || "Sin Nombre",
-        profesion: req.body.profesion || "Sin profesion",
-        puntosVida: req.body.vida|| 42,
-        puntosCordura: req.body.puntosCordura  || 21
-    })
+
 
     Minion.save().then(data =>{
         res.send(data);
