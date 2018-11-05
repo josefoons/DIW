@@ -10,29 +10,31 @@ exports.create = (req,res)=>{
            message:"Minion Vacio..." 
         });
     }
-    
+
+
     if(req.body.tipoFalta == "leve") {
-         const Minion = new Minion({
+        //console.log("Minion leve");
+         const minion = new Minion({
             nombreAlumno: req.body.nombreAlumno || "No nombre",
             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
-            fechaAlumno: req.body.fechaAlumno || "Fecha del incidente",
-            horaAlumno: req.body,horaAlumno,
+            fechaAlumno: req.body.fechaAlumno || "00/00/0000",
+            horaAlumno: req.body.horaAlumno || "00:00",
             lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
             descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
-            inicioPrivacion: req.body.inicioPrivacion,
-            finalPrivacion: req.body.finalPrivacion,
-            tareasEducadoras: req.body.tareasEducadoras,
-            diasTareas: req.body.tareasEducadoras,
-            horarioTareas: req.body.horarioTareas,
-            inicioSuspensionDrets: req.body.inicioSuspensionDrets,
-            finalSuspensionDrets: req.body.finalSuspensionDrets,
-            inicioSuspensioDretClases: req.body.inicioSuspensioDretClases,
-            finalSuspensioDretClases: req.body.finalSuspensioDretClases,
+            inicioPrivacion: req.body.inicioPrivacion || "00/00/0000",
+            finalPrivacion: req.body.finalPrivacion || "00/00/0000",
+            tareasEducadoras: req.body.tareasEducadoras || "Sin tareas asignadas",
+            diasTareas: req.body.tareasEducadoras || "00/00/0000",
+            horarioTareas: req.body.horarioTareas || "00/00/0000",
+            inicioSuspensionDrets: req.body.inicioSuspensionDrets || "00/00/0000",
+            finalSuspensionDrets: req.body.finalSuspensionDrets || "00/00/0000",
+            inicioSuspensioDretClases: req.body.inicioSuspensioDretClases || "00/00/0000",
+            finalSuspensioDretClases: req.body.finalSuspensioDretClases || "00/00/0000",
             telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
             emailPadres: req.body.emailPadres || "Sin email de padres",
-            fechaHoy: req.body.fechaHoy || "Fecha de hoy no introducida",
+            fechaHoy: req.body.fechaHoy || "00/00/0000",
             comparenciaDirector: req.body.comparenciaDirector,
             retiradaElectronica: req.body.retiradaElectronica,
             privacionTiempo: req.body.privacionTiempo,
@@ -40,37 +42,53 @@ exports.create = (req,res)=>{
             suspensionActividadesExtracolares: req.body.suspensionActividadesExtracolares,
             suspensionDretClases: req.body.finalSuspensioDretClases,
             tipificacion: req.body.tipificacion || "Sin tipificacion",
-            vistoProfesor: req.body.vistoProfesor || "No visto por profesor",
-            vistoDirector: req.body.vistoDirector || "No visto por director"
+            vistoProfesor: req.body.vistoProfesor,
+            vistoDirector: req.body.vistoDirector
         })
+        
+        minion.save().then(data =>{
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message|| "Something was wrong creating Minion"
+            });
+        });
     } else {
-        const Minion = new Minion({
+        const minion = new Minion({
             nombreAlumno: req.body.nombreAlumno || "No nombre",
             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
-            fechaAlumno: req.body.fechaAlumno || "Fecha del incidente",
-            horaAlumno: req.body,horaAlumno,
+            fechaAlumno: req.body.fechaAlumno || "00/00/0000",
+            horaAlumno: req.body.horaAlumno || "20:30",
             lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
             descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
             telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
             emailPadres: req.body.emailPadres || "Sin email de padres",
             fechaHoy: req.body.fechaHoy || "Fecha de hoy no introducida",
             tipificacion: req.body.tipificacion || "Sin tipificacion",
-            vistoProfesor: req.body.vistoProfesor || "No visto por profesor",
-            vistoDirector: req.body.vistoDirector || "No visto por director"
+            vistoProfesor: req.body.vistoProfesor,
+            vistoDirector: req.body.vistoDirector
         })
+
+        minion.save().then(data =>{
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message|| "Something was wrong creating Minion"
+            });
+        });
     }
 
-
-
-    Minion.save().then(data =>{
+/*
+    minion.save().then(data =>{
         res.send(data);
     }).catch(err => {
         res.status(500).send({
             message: err.message|| "Something was wrong creating Minion"
         });
     });
+    */
 };
 
 
