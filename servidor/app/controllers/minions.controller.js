@@ -35,15 +35,20 @@ exports.create = (req,res)=>{
             telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
             emailPadres: req.body.emailPadres || "Sin email de padres",
             fechaHoy: req.body.fechaHoy || "00/00/0000",
-            comparenciaDirector: req.body.comparenciaDirector,
-            retiradaElectronica: req.body.retiradaElectronica,
-            privacionTiempo: req.body.privacionTiempo,
-            hacerTareasEducadoras: req.body.hacerTareasEducadoras,
-            suspensionActividadesExtracolares: req.body.suspensionActividadesExtracolares,
-            suspensionDretClases: req.body.finalSuspensioDretClases,
+            comparenciaDirector: req.body.comparenciaDirector || false,
+            retiradaElectronica: req.body.retiradaElectronica || false,
+            privacionTiempo: req.body.privacionTiempo || false,
+            hacerTareasEducadoras: req.body.hacerTareasEducadoras || false,
+            suspensionActividadesExtracolares: req.body.suspensionActividadesExtracolares || false,
+            suspensionDretClases: req.body.finalSuspensioDretClases || false,
             tipificacion: req.body.tipificacion || "Sin tipificacion",
-            vistoProfesor: req.body.vistoProfesor,
-            vistoDirector: req.body.vistoDirector
+            if(req.body.vistoProfesor == "on") {
+                vistoProfesor = true 
+             }else {
+                vistoProfesor = false 
+             }            
+            //vistoProfesor: req.body.vistoProfesor || false,
+            vistoDirector: req.body.vistoDirecto || false
         })
         
         minion.save().then(data =>{
@@ -60,15 +65,15 @@ exports.create = (req,res)=>{
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
             fechaAlumno: req.body.fechaAlumno || "00/00/0000",
-            horaAlumno: req.body.horaAlumno || "20:30",
+            horaAlumno: req.body.horaAlumno || "00:00",
             lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
             descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
             telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
             emailPadres: req.body.emailPadres || "Sin email de padres",
-            fechaHoy: req.body.fechaHoy || "Fecha de hoy no introducida",
+            fechaHoy: req.body.fechaHoy || "00/00/0000",
             tipificacion: req.body.tipificacion || "Sin tipificacion",
-            vistoProfesor: req.body.vistoProfesor,
-            vistoDirector: req.body.vistoDirector
+            vistoProfesor: req.body.vistoProfesor || false,
+            vistoDirector: req.body.vistoDirector || false
         })
 
         minion.save().then(data =>{
