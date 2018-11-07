@@ -84,16 +84,6 @@ exports.create = (req, res) => {
             });
         });
     }
-
-/*
-    minion.save().then(data =>{
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message|| "Something was wrong creating Minion"
-        });
-    });
-    */
 };
 
 
@@ -174,11 +164,36 @@ exports.update = (req, res) => {
     }
 
     // Find note and update it with the request body
-    Minion.findByIdAndUpdate(req.params.minionId, {
-        nombre: req.body.nombre || "Sin nombre",
-        profesion: req.body.profesion || "Sin profesion",
-        puntosVida: req.body.puntosVida || 0,
-        puntosCordura: req.body.puntosCordura || 0
+    MinionL.findByIdAndUpdate(req.params.minionId, {
+        nombreAlumno: req.body.nombreAlumno || "No nombre",
+        grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+        nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
+        horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
+        fechaAlumno: req.body.fechaAlumno || "00/00/0000",
+        horaAlumno: req.body.horaAlumno || "00:00",
+        lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
+        descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
+        inicioPrivacion: req.body.inicioPrivacion || "00/00/0000",
+        finalPrivacion: req.body.finalPrivacion || "00/00/0000",
+        tareasEducadoras: req.body.tareasEducadoras || "Sin tareas asignadas",
+        diasTareas: req.body.tareasEducadoras || "00/00/0000",
+        horarioTareas: req.body.horarioTareas || "00/00/0000",
+        inicioSuspensionDrets: req.body.inicioSuspensionDrets || "00/00/0000",
+        finalSuspensionDrets: req.body.finalSuspensionDrets || "00/00/0000",
+        inicioSuspensioDretClases: req.body.inicioSuspensioDretClases || "00/00/0000",
+        finalSuspensioDretClases: req.body.finalSuspensioDretClases || "00/00/0000",
+        telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
+        emailPadres: req.body.emailPadres || "Sin email de padres",
+        fechaHoy: req.body.fechaHoy || "00/00/0000",
+        comparenciaDirector: comprobarBoolean(req.body.comparenciaDirector) || false,
+        retiradaElectronica: comprobarBoolean(req.body.retiradaElectronica) || false,
+        privacionTiempo: comprobarBoolean(req.body.privacionTiempo) || false,
+        hacerTareasEducadoras: comprobarBoolean(req.body.hacerTareasEducadoras) || false,
+        suspensionActividadesExtracolares: comprobarBoolean(req.body.suspensionActividadesExtracolares) || false,
+        suspensionDretClases: comprobarBoolean(req.body.finalSuspensioDretClases) || false,
+        tipificacion: req.body.tipificacion || "Sin tipificacion",
+        vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
+        vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
     }, { new: true })
         .then(minion => {
             if (!minion) {
@@ -197,6 +212,39 @@ exports.update = (req, res) => {
                 message: "Error updating Minion with id " + req.params.minionId
             });
         });
+        MinionG.findByIdAndUpdate(req.params.minionId, {
+            nombreAlumno: req.body.nombreAlumno || "No nombre",
+            grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+            nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
+            horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
+            fechaAlumno: req.body.fechaAlumno || "00/00/0000",
+            horaAlumno: req.body.horaAlumno || "00:00",
+            lugarAlumno: req.body.lugarAlumno || "Lugar del incidente",
+            descripcionIncidente: req.body.descripcionIncidente || "Sin descripcion",
+            telefonoPadres: req.body.telefonoPadres || "Sin telefono de padres",
+            emailPadres: req.body.emailPadres || "Sin email de padres",
+            fechaHoy: req.body.fechaHoy || "00/00/0000",
+            tipificacion: req.body.tipificacion || "Sin tipificacion",
+            vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
+            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
+        }, { new: true })
+            .then(minion => {
+                if (!minion) {
+                    return res.status(404).send({
+                        message: "Minion not found with id " + req.params.minionId
+                    });
+                }
+                res.send(minion);
+            }).catch(err => {
+                if (err.kind === 'ObjectId') {
+                    return res.status(404).send({
+                        message: "Minion not found with id " + req.params.minionId
+                    });
+                }
+                return res.status(500).send({
+                    message: "Error updating Minion with id " + req.params.minionId
+                });
+            });
 };
 
 // Borrar un minion 
