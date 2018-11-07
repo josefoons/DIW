@@ -36,27 +36,4 @@ const MinionLeveSchema = mongoose.Schema({
         timestamps: true
     });
 
-const MinionGraveSchema = mongoose.Schema({
-
-    nombreAlumno: String,
-    grupoAlumno: String,
-    nombreProfesor: String,
-    horarioProfesor: String,
-    fechaAlumno: String,
-    horaAlumno: String,
-    lugarAlumno: String,
-    descripcionIncidente: String,
-    telefonoPadres: String,
-    emailPadres: String,
-    fechaHoy: String,
-    tipificacion: Array,
-    vistoProfesor: Boolean,
-    vistoDirector: Boolean
-
-}, {
-        timestamps: true
-    });
-
-
 module.exports = mongoose.model('MinionLeve', MinionLeveSchema);
-module.exports = mongoose.model('MinionGrave', MinionGraveSchema);
