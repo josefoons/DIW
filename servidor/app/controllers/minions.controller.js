@@ -43,8 +43,8 @@ exports.create = (req, res) => {
             suspensionDretClases: comprobarBoolean(req.body.finalSuspensioDretClases) || false,
             tipificacion: req.body.tipificacion || "Sin tipificacion",
             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
-            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
-
+            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
+            tipoFalta: req.body.tipoFalta
     })
 
     minion.save().then(data => {
@@ -73,7 +73,8 @@ exports.create = (req, res) => {
             fechaHoy: req.body.fechaHoy || "00/00/0000",
             tipificacion: req.body.tipificacion || "Sin tipificacion",
             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
-            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
+            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
+            tipoFalta: req.body.tipoFalta
         })
     
         minion.save().then(data => {
@@ -193,7 +194,8 @@ exports.update = (req, res) => {
         suspensionDretClases: comprobarBoolean(req.body.finalSuspensioDretClases) || false,
         tipificacion: req.body.tipificacion || "Sin tipificacion",
         vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
-        vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
+        vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
+        tipoFalta: req.body.tipoFalta
     }, { new: true })
         .then(minion => {
             if (!minion) {
@@ -226,7 +228,8 @@ exports.update = (req, res) => {
             fechaHoy: req.body.fechaHoy || "00/00/0000",
             tipificacion: req.body.tipificacion || "Sin tipificacion",
             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
-            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false
+            vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
+            tipoFalta: req.body.tipoFalta
         }, { new: true })
             .then(minion => {
                 if (!minion) {

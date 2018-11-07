@@ -30,7 +30,8 @@ const MinionLeveSchema = mongoose.Schema({
     suspensionDretClases: Boolean,
     tipificacion: Array,
     vistoProfesor: Boolean,
-    vistoDirector: Boolean
+    vistoDirector: Boolean,
+    tipoFalta: String
 
 }, {
         timestamps: true

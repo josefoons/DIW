@@ -15,7 +15,8 @@ const MinionGraveSchema = mongoose.Schema({
     fechaHoy: String,
     tipificacion: Array,
     vistoProfesor: Boolean,
-    vistoDirector: Boolean
+    vistoDirector: Boolean,
+    tipoFalta: String
 
 }, {
         timestamps: true
