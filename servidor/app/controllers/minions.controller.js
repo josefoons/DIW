@@ -92,7 +92,7 @@ exports.create = (req, res) => {
 // Obtener todos los Minions
 exports.findAll = (req, res) => {
 
-    MinionL.find().then(Minions => {
+    MinionL.find().then(minions => {
         res.send(minions);
     }).catch(err => {
         res.status(500).send({
@@ -100,7 +100,7 @@ exports.findAll = (req, res) => {
         });
     });
 
-    MinionG.find().then(Minions => {
+    MinionG.find().then(minions => {
         res.send(minions);
     }).catch(err => {
         res.status(500).send({

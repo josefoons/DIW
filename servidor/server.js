@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const app = express();
 
 // Utilizaremos body-parser para "parsear lo que nos pidan"
@@ -28,7 +28,6 @@ mongoose.connect(dbConfig.url,{
         process.exit();
     });
 
-
 // Require minions routes
 require('./app/routes/minions.routes.js')(app); 
 
@@ -42,3 +41,6 @@ app.get('/',(req,res)=>{
 app.listen(3000,() => {
     console.log(" * Server girando correctamente.");
 });
+
+// Paginas publicas (estaticas)
+app.use(express.static(path.join(__dirname, 'public')));
