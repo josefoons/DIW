@@ -92,16 +92,16 @@ exports.create = (req, res) => {
 // Obtener todos los Minions
 exports.findAll = (req, res) => {
 
-    MinionL.find().then(minions => {
-        res.send(minions);
+    MinionL.find().then(minion => {
+        res.send(minion);
     }).catch(err => {
         res.status(500).send({
             message: err.message || " Algo fue mal mientras los capturabamos a todos"
         });
     });
 
-    MinionG.find().then(minions => {
-        res.send(minions);
+    MinionG.find().then(minion => {
+        res.send(minion);
     }).catch(err => {
         res.status(500).send({
             message: err.message || " Algo fue mal mientras los capturabamos a todos"
