@@ -89,8 +89,8 @@ exports.create = (req, res) => {
 
 
 
-// Obtener todos los Minions
-exports.findAll = (req, res) => {
+// Obtener todas las Faltas Leves
+exports.findAllLeves = (req, res) => {
 
     MinionL.find().then(minion => {
         res.send(minion);
@@ -99,6 +99,13 @@ exports.findAll = (req, res) => {
             message: err.message || " Algo fue mal mientras los capturabamos a todos"
         });
     });
+
+};
+
+
+
+// Obtener todas las Faltas Graves
+exports.findAllGraves = (req,res) => {
 
     MinionG.find().then(minion => {
         res.send(minion);
