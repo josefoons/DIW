@@ -4,10 +4,10 @@ module.exports = (app) => {
     // Create a new minion
     app.post('/minions', minions.create);
 
-    // Retrieve all minions
+    // Retrieve all minions Leve
     app.get('/minionsL', minions.findAllLeves);
 
-    // Retrieve all minions
+    // Retrieve all minions Grave
     app.get('/minionsG', minions.findAllGraves);
 
     // Retrieve a single minions with minionId

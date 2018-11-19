@@ -58,7 +58,7 @@ exports.create = (req, res) => {
     });
 } 
     if(req.body.tipoFalta == "grave"){
-        console.log("Inside the GRAVE FALTA "+req.body.tipoFalta);
+        //console.log("Inside the GRAVE FALTA "+req.body.tipoFalta);
         const minion = new MinionG({
             nombreAlumno: req.body.nombreAlumno || "No nombre",
             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
