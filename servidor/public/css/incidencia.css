@@ -1,0 +1,19 @@
+#botonesFalta {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
+
+#leve {
+    display: none;
+}
+
+#grave {
+    display: none;
+}
+
+@media (max-width:629px) {
+    img {
+      display: none;
+    }
+  } 

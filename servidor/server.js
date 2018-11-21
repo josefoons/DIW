@@ -33,7 +33,8 @@ require('./app/routes/minions.routes.js')(app);
 
 // Vamos a definir un "punto de inicio"
 app.get('/',(req,res)=>{
-    res.json({"message":"Parte Backend de nuestro programa"});
+    //res.json({"message":"Parte Backend de nuestro programa"});
+    res.sendfile('index.html', { root: __dirname + "/public" } );
 });
 
 // Crear el puerto y escucharlo
