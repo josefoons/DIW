@@ -259,6 +259,8 @@ exports.update = (req, res) => {
 
 // Borrar un minion 
 exports.delete = (req, res) => {
+
+    
     MinionL.findByIdAndRemove(req.params.minionId)
         .then(minion => {
             if (!minion) {

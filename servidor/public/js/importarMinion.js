@@ -1,3 +1,18 @@
+function saludo(elemento) {
+  console.log("elemento"+elemento);
+  $.ajax({
+    type: "DELETE",
+    url: "http://localhost:3000/minions/" +elemento,
+    data: "",
+    success: function(msg){
+      console.log("Entro");
+      location.reload();
+    }
+  });
+  console.log("Final : "+elemento);
+
+}
+
 $.getJSON("http://localhost:3000/minionsL", function (data) {
   var items = [];
   $.each(data, function (key, val) {
@@ -16,13 +31,13 @@ $.getJSON("http://localhost:3000/minionsL", function (data) {
 $.getJSON("http://localhost:3000/minionsG", function (data) {
   var items = [];
   $.each(data, function (key, val) {
-    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " <input id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
+    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " <input onclick='saludo(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
   });
 
   $("<ul/>", {
     "class": "list-group",
     html: items.join("")
   }).appendTo("#divListaGraves");
-
-
 });
+
+

@@ -14,9 +14,9 @@ module.exports = (app) => {
     app.get('/minions/:minionId', minions.findOne);
 
     // Update a minions with minionId
-    app.put('/minions/:minionsId', minions.update);
+    app.put('/minions/:minionId', minions.update);
 
     // Delete a minions with minionId
-    app.delete('/minions/:minionsId', minions.delete);
+    app.delete('/minions/:minionId', minions.delete);
 
 }
