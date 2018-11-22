@@ -1,16 +1,18 @@
 function saludo(elemento) {
-  console.log("elemento"+elemento);
+  //console.log("elemento"+elemento);
   $.ajax({
     type: "DELETE",
-    url: "http://localhost:3000/minions/" +elemento,
+    url: "http://localhost:3000/minions/" + elemento,
     data: "",
-    success: function(msg){
+    success: function (msg) {
       console.log("Entro");
       location.reload();
     }
   });
-  console.log("Final : "+elemento);
-
+  //  console.log("Final : "+elemento);
+  setTimeout(() => {
+    location.reload();
+  }, 100);
 }
 
 $.getJSON("http://localhost:3000/minionsL", function (data) {

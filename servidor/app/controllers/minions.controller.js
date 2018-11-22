@@ -281,6 +281,7 @@ exports.delete = (req, res) => {
         });
 
         MinionG.findByIdAndRemove(req.params.minionId)
+        //.then(Promise.resolve());
         .then(minion => {
             if (!minion) {
                 return res.status(404).send({
@@ -298,6 +299,7 @@ exports.delete = (req, res) => {
                 message: "No podemos matar a ese Minion with id " + req.params.minionId
             });
         });
+        
 };
 
 function comprobarBoolean(elemento) {
