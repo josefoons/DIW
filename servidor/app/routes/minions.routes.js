@@ -18,4 +18,5 @@ module.exports = (app) => {
 
     // Delete a minions with minionId
     app.delete('/minions/:minionsId', minions.delete);
+
 }
