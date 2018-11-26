@@ -1,15 +1,12 @@
-function saludo(elemento) {
-  //console.log("elemento"+elemento);
+function eliminarIncidencia(elemento) {
   $.ajax({
     type: "DELETE",
     url: "http://localhost:3000/minions/" + elemento,
     data: "",
     success: function (msg) {
-      console.log("Entro");
       location.reload();
     }
   });
-  //  console.log("Final : "+elemento);
   setTimeout(() => {
     location.reload();
   }, 100);
@@ -18,13 +15,11 @@ function saludo(elemento) {
 $.getJSON("http://localhost:3000/minionsL", function (data) {
   var items = [];
   $.each(data, function (key, val) {
-    //console.log(key);
-    items.push("<tr><td> " + val.nombreAlumno + "</td></tr>");
+    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " <input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
   });
 
-
-  $("<table/>", {
-    "class": "table table-striped table-dark",
+  $("<ul/>", {
+    "class": "list-group",
     html: items.join("")
   }).appendTo("#divListaLeves");
 });
@@ -33,7 +28,7 @@ $.getJSON("http://localhost:3000/minionsL", function (data) {
 $.getJSON("http://localhost:3000/minionsG", function (data) {
   var items = [];
   $.each(data, function (key, val) {
-    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " <input onclick='saludo(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
+    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " <input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
   });
 
   $("<ul/>", {

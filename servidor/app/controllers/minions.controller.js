@@ -304,7 +304,6 @@ exports.delete = (req, res) => {
 
 function comprobarBoolean(elemento) {
     
-
     if (elemento == "on") {
         return true;
     } else {

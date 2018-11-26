@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Convivencia</title>
+    <title>Crear incidencia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/incidencia.css" />
 
@@ -22,15 +22,26 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Volver a menu...</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="encabezado">
             <img class="w-25 p-3 float-left" src="img/logo.png">
             <img class="w-25 p-3 float-right" src="img/generalitat.jpg">
         </div>
         <div class="clearfix"></div>
-        
-        <!-- <form onsubmit="return onSubmit(this)"> -->
+
+        <!-- <form method="POST" action="http://localhost:3000/minions/"> -->
         <form method="POST" action="http://localhost:3000/minions/">
+
             <div class="row">
                 <div class="col-6">
                     <div class="form-group row">
@@ -103,7 +114,8 @@
             <hr>
             <div id="botonesFalta">
                 <h4> Tipo de Falta
-                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center" required>
+                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center"
+                        required>
                         <option value="0" hidden>Selecciona falta</option>
                         <option value="leve">Leve</option>
                         <option value="grave">Greu</option>
@@ -289,7 +301,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    
+
                     <div class="form-check">
                         <input class="form-check-input" name="vistoDirector" type="checkbox" id="vistoDirector">
                         <label>Signatura del cap d'estudis/director.</label>
