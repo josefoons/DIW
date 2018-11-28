@@ -139,7 +139,7 @@ exports.findOneL = (req, res) => {
             });
         });
     };
-    exports.findOneG = (req, res) => {
+exports.findOneG = (req, res) => {
         MinionG.findById(req.params.minionId)
         .then(minion => {
             if (!minion) {
@@ -164,7 +164,7 @@ exports.findOneL = (req, res) => {
 
 
 // Actualizar un minion
-exports.update = (req, res) => {
+exports.updateL = (req, res) => {
     // Validate Request
     if (!req.body) {
         return res.status(400).send({
@@ -222,9 +222,11 @@ exports.update = (req, res) => {
                 message: "Error updating Minion with id " + req.params.minionId
             });
         });
+};
+exports.updateG = (req, res) => {
         MinionG.findByIdAndUpdate(req.params.minionId, {
             nombreAlumno: req.body.nombreAlumno || "No nombre",
-            grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+/*             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
             fechaAlumno: req.body.fechaAlumno || "00/00/0000",
@@ -237,7 +239,7 @@ exports.update = (req, res) => {
             tipificacion: req.body.tipificacion || "Sin tipificacion",
             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
             vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
-            tipoFalta: req.body.tipoFalta
+            tipoFalta: req.body.tipoFalta */
         }, { new: true })
             .then(minion => {
                 if (!minion) {
@@ -281,6 +283,7 @@ exports.delete = (req, res) => {
             });
         });
 
+        
         MinionG.findByIdAndRemove(req.params.minionId)
         //.then(Promise.resolve());
         .then(minion => {
