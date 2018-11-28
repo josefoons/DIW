@@ -119,7 +119,7 @@ exports.findAllGraves = (req,res) => {
 
 
 // Obtener un Minion por Id
-exports.findOne = (req, res) => {
+exports.findOneL = (req, res) => {
     MinionL.findById(req.params.minionId)
         .then(minion => {
             if (!minion) {
@@ -138,7 +138,8 @@ exports.findOne = (req, res) => {
                 message: "Tenemos NOSOTROS problemas con ese id :" + req.params.minionId
             });
         });
-
+    };
+    exports.findOneG = (req, res) => {
         MinionG.findById(req.params.minionId)
         .then(minion => {
             if (!minion) {

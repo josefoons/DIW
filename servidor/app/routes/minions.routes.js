@@ -11,7 +11,10 @@ module.exports = (app) => {
     app.get('/minionsG', minions.findAllGraves);
 
     // Retrieve a single minions with minionId
-    app.get('/minions/:minionId', minions.findOne);
+    app.get('/minionsG/:minionId', minions.findOneG);
+
+    // Retrieve a single minions with minionId
+    app.get('/minionsL/:minionId', minions.findOneL);
 
     // Update a minions with minionId
     app.put('/minions/:minionId', minions.update);

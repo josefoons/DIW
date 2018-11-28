@@ -12,6 +12,7 @@ function eliminarIncidencia(elemento) {
   }, 100);
 }
 
+
 $.getJSON("http://localhost:3000/minionsL", function (data) {
   var items = [];
   $.each(data, function (key, val) {
