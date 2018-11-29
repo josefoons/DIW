@@ -48,8 +48,6 @@ exports.create = (req, res) => {
     })
 
     minion.save().then(data => {
-        //console.log(JSON.stringify(minion));
-        //console.log("Angel estuvo aqui");
         res.send(data);
     }).catch(err => {
         res.status(500).send({
@@ -79,12 +77,15 @@ exports.create = (req, res) => {
     
         minion.save().then(data => {
             res.send(data);
+
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Something was wrong creating Minion"
             });
         });
     }
+    //Esto hace que se refresque xD
+    res.redirect('/incidencia.html');
 };
 
 
