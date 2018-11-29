@@ -1,12 +1,17 @@
+
+var incidencia_current="";
+var link = window.location.href;
+
 function realiza() {
-    $.getJSON("http://localhost:3000/minionsG/5bfec45d5db3db12e6fcd3a5", function (data) {
+    $.getJSON( getLink(), function (data) {
     var items = [];
     $.each(data, function (key, val) {
-        //Hacer un if para lo que yo quiera
         if(key == "nombreAlumno"){
             items.push("<label id='labelTag'>" + key + "</label><input id='nombre' name='" + key + "'value='" + val + "'></input> <input type='button' value='Update' onclick='update()'><br>");
         }
+
     });
+    incidencia_current=data;
     $("<div/>", {
         html: items.join("")
     }).appendTo("#lista");
@@ -15,16 +20,32 @@ function realiza() {
 
 function update() {
     var nombre = document.getElementById("nombre").value;
+    incidencia_current.nombreAlumno = nombre;
+
     $.ajax({
       type: "PUT",
-      url: "http://localhost:3000/minionsG/5bfec45d5db3db12e6fcd3a5",
+      url: getLink(),
       //hacer esto
-      data: JSON.stringify({nombreAlumno: nombre}),
+      data: incidencia_current,
       success: function (msg) {
-        location.reload();
+        location.reload;
       }
     });
     setTimeout(() => {
-      location.reload();
+      location.href = "./listar.html";
     }, 100);
-  }
+}
+
+function getLink() {
+    var array = link.split("?");
+    var nuestraID = array[1];
+    var tipo = array[2];
+
+    if(tipo == "G"){
+        return "http://localhost:3000/minionsG/" + nuestraID;
+    } else {
+        return "http://localhost:3000/minionsL/" + nuestraID;
+    }
+
+
+}

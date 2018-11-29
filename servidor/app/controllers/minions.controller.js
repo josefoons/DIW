@@ -224,6 +224,7 @@ exports.updateL = (req, res) => {
         });
 };
 exports.updateG = (req, res) => {
+        //console.log(req);
         MinionG.findByIdAndUpdate(req.params.minionId, {
             nombreAlumno: req.body.nombreAlumno || "No nombre",
 /*             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
