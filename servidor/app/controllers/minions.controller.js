@@ -225,10 +225,9 @@ exports.updateL = (req, res) => {
         });
 };
 exports.updateG = (req, res) => {
-        //console.log(req);
         MinionG.findByIdAndUpdate(req.params.minionId, {
-            nombreAlumno: req.body.nombreAlumno || "No nombre",
-/*             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
+            /*nombreAlumno: req.body.nombreAlumno || "No nombre",
+            grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
             fechaAlumno: req.body.fechaAlumno || "00/00/0000",

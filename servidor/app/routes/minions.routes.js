@@ -16,10 +16,10 @@ module.exports = (app) => {
     // Retrieve a single minions with minionId
     app.get('/minionsL/:minionId', minions.findOneL);
 
-    // Update a minions with minionId (esto era put en vez de post)
+    // Update a minions with minionId
     app.put('/minionsL/:minionId', minions.updateL);
 
-    // Update a minions with minionId (esto era put en vez de post)
+    // Update a minions with minionId
     app.put('/minionsG/:minionId', minions.updateG);
 
     // Delete a minions with minionId

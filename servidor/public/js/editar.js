@@ -1,13 +1,14 @@
 
 var incidencia_current="";
 var link = window.location.href;
+var listadoAceptadas = ["nombreAlumno", "grupoAlumno", "nombreProfesor", "horarioProfesor", "grupoAlumno", "grupoAlumno", "grupoAlumno", "grupoAlumno", "grupoAlumno"];
 
 function realiza() {
     $.getJSON( getLink(), function (data) {
     var items = [];
     $.each(data, function (key, val) {
-        if(key == "nombreAlumno"){
-            items.push("<label id='labelTag'>" + key + "</label><input id='nombre' name='" + key + "'value='" + val + "'></input> <input type='button' value='Update' onclick='update()'><br>");
+        if(key  != "tipificacion" && key != "_id"){ //key in array
+            items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "'></input><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
         }
 
     });
@@ -18,22 +19,19 @@ function realiza() {
 });
 }
 
-function update() {
-    var nombre = document.getElementById("nombre").value;
-    incidencia_current.nombreAlumno = nombre;
+function update(nombreCampo) {
+    var nombre = document.getElementById(nombreCampo).value;
+    
+    incidencia_current[nombreCampo] = nombre;
 
     $.ajax({
       type: "PUT",
       url: getLink(),
-      //hacer esto
       data: incidencia_current,
       success: function (msg) {
         location.reload;
       }
     });
-    setTimeout(() => {
-      location.href = "./listar.html";
-    }, 100);
 }
 
 function getLink() {
@@ -46,6 +44,5 @@ function getLink() {
     } else {
         return "http://localhost:3000/minionsL/" + nuestraID;
     }
-
 
 }
