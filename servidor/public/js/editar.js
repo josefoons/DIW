@@ -1,7 +1,6 @@
 
 var incidencia_current="";
 var link = window.location.href;
-var listadoAceptadas = ["nombreAlumno", "grupoAlumno", "nombreProfesor", "horarioProfesor", "grupoAlumno", "grupoAlumno", "grupoAlumno", "grupoAlumno", "grupoAlumno"];
 
 function realiza() {
     $.getJSON( getLink(), function (data) {
