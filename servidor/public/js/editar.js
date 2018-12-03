@@ -1,15 +1,20 @@
 
 var incidencia_current="";
 var link = window.location.href;
+var listaCamposValidos = ["nombreAlumno", "grupoAlumno", "nombreProfesor", "horarioProfesor", "descripcionIncidente", "telefonoPadres", "emailPadres"];
+
 
 function realiza() {
     $.getJSON( getLink(), function (data) {
     var items = [];
     $.each(data, function (key, val) {
-        if(key  != "tipificacion" && key != "_id"){ //key in array
-            items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "'></input><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
+        if(listaCamposValidos.includes(key)){
+            if(key == "descripcionIncidente") {
+                items.push("<label id='labelTag'>" + key + "</label><textarea id='" + key + "' class='form-control' name='" + key + "'>" + val + "</textarea><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
+            } else {
+                items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "'></input><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
+            }
         }
-
     });
     incidencia_current=data;
     $("<div/>", {
