@@ -226,7 +226,7 @@ exports.updateL = (req, res) => {
 };
 exports.updateG = (req, res) => {
         MinionG.findByIdAndUpdate(req.params.minionId, {
-            /*nombreAlumno: req.body.nombreAlumno || "No nombre",
+            nombreAlumno: req.body.nombreAlumno || "No nombre",
             grupoAlumno: req.body.grupoAlumno || "Sin Grupo",
             nombreProfesor: req.body.nombreProfesor || "No nombre Profesor",
             horarioProfesor: req.body.horarioProfesor || "Sin horario introducido",
@@ -240,7 +240,7 @@ exports.updateG = (req, res) => {
             tipificacion: req.body.tipificacion || "Sin tipificacion",
             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
             vistoDirector: comprobarBoolean(req.body.vistoDirector) || false,
-            tipoFalta: req.body.tipoFalta */
+            tipoFalta: req.body.tipoFalta 
         }, { new: true })
             .then(minion => {
                 if (!minion) {

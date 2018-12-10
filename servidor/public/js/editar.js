@@ -10,6 +10,25 @@ function realiza() {
     $.each(data, function (key, val) {
         if(listaCamposValidos.includes(key)){
             if(key == "descripcionIncidente") {
+                items.push("<label id='labelTag'>" + key + "</label><textarea id='" + key + "' class='form-control' name='" + key + "' oninput='update(\""+ key +"\")'>" + val + "</textarea> <br>");
+            } else {
+                items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "' oninput='update(\""+ key +"\")'></input> <br>");
+            }
+        }
+    });
+    incidencia_current=data;
+    $("<div/>", {
+        html: items.join("")
+    }).appendTo("#lista");
+});
+}
+
+/* function realiza() {
+    $.getJSON( getLink(), function (data) {
+    var items = [];
+    $.each(data, function (key, val) {
+        if(listaCamposValidos.includes(key)){
+            if(key == "descripcionIncidente") {
                 items.push("<label id='labelTag'>" + key + "</label><textarea id='" + key + "' class='form-control' name='" + key + "'>" + val + "</textarea><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
             } else {
                 items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "'></input><input type='button' style='float: right;' value='UPDATE' onclick='update(\""+ key +"\")'> <br>");
@@ -21,7 +40,7 @@ function realiza() {
         html: items.join("")
     }).appendTo("#lista");
 });
-}
+} */
 
 function update(nombreCampo) {
     var nombre = document.getElementById(nombreCampo).value;
