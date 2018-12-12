@@ -16,7 +16,7 @@ function eliminarIncidencia(elemento) {
 $.getJSON("http://localhost:3000/minionsL", function (data) {
   var items = [];
   $.each(data, function (key, val) {
-    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " | " + val.nombreProfesor + " | " + val.fechaHoy +  "<input id='" + val._id + "' onclick='modificarL(this.id)' type='button' value='MODIFICAR' style='float:right;'><input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
+    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " | " + val.nombreProfesor + " | " + val.fechaHoy +  "<input id='" + val._id + "' onclick='modificarL(this.id)' type='button' value='MODIFICAR' style='float:right;'><input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'><input onclick='checkL(this.id)' id='" + val._id + "' type='button' value='CHECK' style='float:right;'></li>");
   });
 
   $("<ul/>", {
@@ -29,7 +29,7 @@ $.getJSON("http://localhost:3000/minionsL", function (data) {
 $.getJSON("http://localhost:3000/minionsG", function (data) {
   var items = [];
   $.each(data, function (key, val) {
-    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " | " + val.nombreProfesor + " | " + val.fechaHoy +  " <input id='" + val._id + "' onclick='modificarG(this.id)' type='button' value='MODIFICAR' style='float:right;'><input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'></li>");
+    items.push("<li id='" + key + "' class='list-group-item'>" + val.nombreAlumno + " | " + val.nombreProfesor + " | " + val.fechaHoy +  " <input id='" + val._id + "' onclick='modificarG(this.id)' type='button' value='MODIFICAR' style='float:right;'><input onclick='eliminarIncidencia(this.id)' id='" + val._id + "' type='button' value='ELIMINAR' style='float:right;'><input onclick='checkG(this.id)' id='" + val._id + "' type='button' value='CHECK' style='float:right;'></li>");
   });
 
   $("<ul/>", {
@@ -45,4 +45,12 @@ function modificarG(elemento) {
 
 function modificarL(elemento) {
   location.href='http://localhost:3000/editar.html?' + elemento + "?L";
+}
+
+function checkG(elemento) {
+  location.href='http://localhost:3000/visto.html?' + elemento + "?G";
+}
+
+function checkL(elemento) {
+  location.href='http://localhost:3000/visto.html?' + elemento + "?L";
 }

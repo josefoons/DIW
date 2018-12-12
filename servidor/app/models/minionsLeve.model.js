@@ -29,9 +29,14 @@ const MinionLeveSchema = mongoose.Schema({
     suspensionActividadesExtracolares: Boolean,
     suspensionDretClases: Boolean,
     tipificacion: Array,
-    vistoProfesor: Boolean,
-    vistoDirector: Boolean,
-    tipoFalta: String
+    tipoFalta: String,
+
+    /* Aqui para comprobar */
+
+    vistoTutor: Boolean,
+    vistoOrientadora: Boolean,
+    vistoJefeEstudios: Boolean,
+    vistoConvivencia: Boolean
 
 }, {
         timestamps: true
