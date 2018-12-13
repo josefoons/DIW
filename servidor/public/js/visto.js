@@ -66,16 +66,16 @@ function realizaVisto(id) {
                         switch (key) {
                             case "vistoTutor":
                                 if (val == true) {
-                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Tutor</label>")
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la Tutor/a</label>")
                                 } else {
-                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Tutor</label>")
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la Tutor/a</label>")
                                 }
                                 break;
                             case "vistoOrientadora":
                                 if (val == true) {
-                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Orientador</label>")
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la Orientador/a</label>")
                                 } else {
-                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Orientador</label>")
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la Orientador/a</label>")
                                 }
                                 break;
                             case "vistoJefeEstudios":
