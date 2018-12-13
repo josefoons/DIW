@@ -7,63 +7,132 @@
 
 
 */
-var incidencia_current="";
-var link = window.location.href;
-var listaCamposValidos = ["vistoTutor", "vistoOrientadora", "vistoJefeEstudios", "vistoConvivencia"];
+var incidencia_current = "";
+var idMinion = "";
+var tipo = "";
+var listaCamposValidos = ["vistoTutor", "vistoOrientadora", "vistoJefeEstudios", "vistoConvivencia", "habladoFamilia"];
 
 
-function realiza() {
-    $.getJSON( getLink(), function (data) {
-    var items = [];
-    $.each(data, function (key, val) {
-        if(listaCamposValidos.includes(key)){
-            if(val == true){
-                items.push("<label>" + key + "</label><input id='" + key + "' onchange='update(\""+ key +"\")' type='checkbox'  name='" + key + "' checked></input>")
-            } else {
-                items.push("<label>" + key + "</label><input id='" + key + "' onclick='update(\""+ key +"\")' type='checkbox'  name='" + key + "'></input>")
+function realizaVisto(id) {
+    document.getElementById("listaCheck").innerHTML = "";
+    var total = id.split("#");
+    idMinion = total[0];
+    tipo = total[1];
+    $.getJSON(getLinkCheck(), function (data) {
+        var items = [];
+        $.each(data, function (key, val) {
+            if (listaCamposValidos.includes(key)) {
+                if (tipo == "L") {
+                    switch (key) {
+                        case "vistoTutor":
+                            if (val == true) {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Tutor</label>")
+                            } else {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Tutor</label>")
+                            }
+                            break;
+                        case "vistoOrientadora":
+                            if (val == true) {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Orientador</label>")
+                            } else {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Orientador</label>")
+                            }
+                            break;
+                        case "vistoJefeEstudios":
+                            if (val == true) {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la Jefe/a de Estudios</label>")
+                            } else {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la Jefe/a de Estudios</label>")
+                            }
+                            break;
+                        case "vistoConvivencia":
+                            if (val == true) {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la profesor/a de Convivencia</label>")
+                            } else {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la profesor/a de Convivencia</label>")
+                            }
+                            break;
+                        case "habladoFamilia":
+                            items.push("<hr>");
+                            if (val == true) {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Hablado con Familia</label>")
+                            } else {
+                                items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Hablado con Familia</label>")
+                            }
+                            break;
+                    }
+                } else {
+                    if (tipo == "G") {
+                        switch (key) {
+                            case "vistoTutor":
+                                if (val == true) {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Tutor</label>")
+                                } else {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Tutor</label>")
+                                }
+                                break;
+                            case "vistoOrientadora":
+                                if (val == true) {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el Orientador</label>")
+                                } else {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onclick='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el Orientador</label>")
+                                }
+                                break;
+                            case "vistoJefeEstudios":
+                                if (val == true) {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la Jefe/a de Estudios</label>")
+                                } else {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la Jefe/a de Estudios</label>")
+                                }
+                                break;
+                            case "vistoConvivencia":
+                                if (val == true) {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Visto por el/la profesor/a de Convivencia</label>")
+                                } else {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Visto por el/la profesor/a de Convivencia</label>")
+                                }
+                                break;
+                            case "habladoFamilia":
+                                items.push("<hr>");
+                                if (val == true) {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "' checked></input>Hablado con Familia</label>")
+                                } else {
+                                    items.push("<label><input style='margin-right: 10px;' id='" + key + "' onchange='updateCheck(\"" + key + "\")' type='checkbox'  name='" + key + "'></input>Hablado con Familia</label>")
+                                }
+                                break;
+                        }
+                    }
+                }
+                items.push("<br>");
             }
-            items.push("<br>");
-            
-        }
-    });
-    incidencia_current=data;
-    
-    $("<div/>", {
-        html: items.join("")
-    }).appendTo("#lista");
-});
-}
-//ARREGLAR UPDATE
-function update(nombreCampo) {
-    var nombre = document.getElementById(nombreCampo).checked;
-    alert(incidencia_current[nombreCampo]);
-    if (nombre == true) {
-        incidencia_current[nombreCampo] = true;
-    } else {
-        incidencia_current[nombreCampo] = false;
-    } 
+        });
+        incidencia_current = data;
 
-    //alert(document.getElementById(nombreCampo).id + " " + document.getElementById(nombreCampo).value);
-    //alert(incidencia_current[nombreCampo]);
-    
-    //alert(incidencia_current[nombreCampo]);
+        $("<div/>", {
+            html: items.join("")
+        }).appendTo("#listaCheck");
+    });
+}
+
+function updateCheck(nombreCampo) {
+
+    incidencia_current[nombreCampo] = document.getElementById(nombreCampo).checked;
 
     $.ajax({
-      type: "PUT",
-      url: getLink(),
-      data: incidencia_current,
-      success: function (msg) {
-        location.reload;
-      }
+        type: "PUT",
+        url: getLinkCheck(),
+        data: incidencia_current,
+        success: function (msg) {
+            location.reload;
+        }
     });
 }
 
-function getLink() {
-    var array = link.split("?");
-    var nuestraID = array[1];
-    var tipo = array[2];
+function getLinkCheck() {
 
-    if(tipo == "G"){
+    var nuestraID = idMinion;
+
+    if (tipo == "G") {
         return "http://localhost:3000/minionsG/" + nuestraID;
     } else {
         return "http://localhost:3000/minionsL/" + nuestraID;

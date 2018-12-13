@@ -48,7 +48,8 @@ exports.create = (req, res) => {
             vistoTutor: false,
             vistoOrientadora: false,
             vistoJefeEstudios: false,
-            vistoConvivencia: false
+            vistoConvivencia: false,
+            habladoFamilia: false 
         })
 
         minion.save().then(data => {
@@ -80,7 +81,8 @@ exports.create = (req, res) => {
             vistoTutor: false,
             vistoOrientadora: false,
             vistoJefeEstudios: false,
-            vistoConvivencia: false
+            vistoConvivencia: false,
+            habladoFamilia: false 
         })
 
         minion.save().then(data => {
@@ -213,10 +215,11 @@ exports.updateL = (req, res) => {
         tipoFalta: req.body.tipoFalta,
 
         /* Aqui para comprobar */
-        vistoTutor: false,
-        vistoOrientadora: false,
-        vistoJefeEstudios: false,
-        vistoConvivencia: false
+        vistoTutor: req.body.vistoTutor || false,
+        vistoOrientadora: req.body.vistoOrientadora || false,
+        vistoJefeEstudios: req.body.vistoJefeEstudios || false,
+        vistoConvivencia: req.body.vistoConvivencia ||false,
+        habladoFamilia: req.body.habladoFamilia || false 
 
     }, { new: true })
         .then(minion => {
@@ -254,10 +257,12 @@ exports.updateG = (req, res) => {
         /*             vistoProfesor: comprobarBoolean(req.body.vistoProfesor) || false,
                     vistoDirector: comprobarBoolean(req.body.vistoDirector) || false, */
         tipoFalta: req.body.tipoFalta,
-        vistoTutor: false,
-        vistoOrientadora: false,
-        vistoJefeEstudios: false,
-        vistoConvivencia: false
+        
+        vistoTutor: req.body.vistoTutor || false,
+        vistoOrientadora: req.body.vistoOrientadora || false,
+        vistoJefeEstudios: req.body.vistoJefeEstudios || false,
+        vistoConvivencia: req.body.vistoConvivencia || false,
+        habladoFamilia: req.body.habladoFamilia || false 
 
     }, { new: true })
         .then(minion => {

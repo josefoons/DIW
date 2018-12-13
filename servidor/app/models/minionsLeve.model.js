@@ -36,7 +36,8 @@ const MinionLeveSchema = mongoose.Schema({
     vistoTutor: Boolean,
     vistoOrientadora: Boolean,
     vistoJefeEstudios: Boolean,
-    vistoConvivencia: Boolean
+    vistoConvivencia: Boolean,
+    habladoFamilia: Boolean
 
 }, {
         timestamps: true
