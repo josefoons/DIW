@@ -33,35 +33,41 @@
     <div class="container">
       <h1 class="display-4"><img id="logo" src="img/logo.png"></h1>
 
-
-
       <div class="container-fluid">
-        <h1>Graves</h1>
-        <table width="20%">
-          <tr>
-            <td style="padding-right: 10px">
-              <input type="text" id="buscadorGrave" onkeyup="buscarGrave()" placeholder="Introduce termino a buscar...">
-            </td>
-          </tr>
-        </table>
+        <div>
+            <h1 class="titulo">Graves</h1>
+            <table width="20%" class="buscador">
+                <tr>
+                  <td style="padding-right: 10px">
+                    <input type="text" id="buscadorGrave" onkeyup="buscarGrave()" placeholder="Introduce termino a buscar...">
+                  </td>
+                </tr>
+              </table>
+        </div>
         <div id="divListaGraves">
 
         </div>
       </div>
       <hr>
       <div class="container-fluid">
-        <h1>Leves</h1>
-        <table width="20%">
-          <tr>
-            <td style="padding-right: 10px">
-              <input type="text" id="buscadorLeve" onkeyup="buscarLeve()" placeholder="Introduce termino a buscar...">
-            </td>
-          </tr>
-        </table>
+          <div>
+              <h1 class="titulo">Leves</h1>
+              <table width="20%" class="buscador">
+                  <tr>
+                    <td style="padding-right: 10px">
+                      <input type="text" id="buscadorLeve" onkeyup="buscarLeve()" placeholder="Introduce termino a buscar...">
+                    </td>
+                  </tr>
+                </table>
+          </div>
+
         <div id="divListaLeves">
 
         </div>
       </div>
+      <footer class="w3-container w3-light-grey">
+        <h5>&copy; Jose Fons - IES La Senia - Paiporta - Segundo DAW 2018</h5>
+    </footer>
 
 
       <!-- Aqui va el modal de Check -->
@@ -80,6 +86,7 @@
             </div>
           </div>
         </div>
+      </div>
 </body>
 
 </html>

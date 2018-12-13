@@ -10,33 +10,8 @@
 var incidencia_current = "";
 var idMinion = "";
 var tipo = "";
-var listaCamposValidosV = ["vistoTutor", "vistoOrientadora", "vistoJefeEstudios", "vistoConvivencia", "habladoFamilia"];
-var listaCamposValidos = ["nombreAlumno", "grupoAlumno", "nombreProfesor", "horarioProfesor", "descripcionIncidente", "telefonoPadres", "emailPadres"];
+var listaCamposValidos = ["vistoTutor", "vistoOrientadora", "vistoJefeEstudios", "vistoConvivencia", "habladoFamilia"];
 
-
-function modificarVentana(id) {
-    document.getElementById("listaCheck").innerHTML = "";
-    var total = id.split("#");
-    idMinion = total[0];
-    tipo = total[1];
-
-    $.getJSON( getLinkCheck(), function (data) {
-    var items = [];
-    $.each(data, function (key, val) {
-        if(listaCamposValidos.includes(key)){
-            if(key == "descripcionIncidente") {
-                items.push("<label id='labelTag'>" + key + "</label><textarea id='" + key + "' class='form-control' name='" + key + "' oninput='update(\""+ key +"\")'>" + val + "</textarea> <br>");
-            } else {
-                items.push("<label id='labelTag'>" + key + "</label><input id='" + key + "' class='form-control' name='" + key + "' value='" + val + "' oninput='update(\""+ key +"\")'></input> <br>");
-            }
-        }
-    });
-    incidencia_current=data;
-    $("<div/>", {
-        html: items.join("")
-    }).appendTo("#listaCheck");
-});
-}
 
 function realizaVisto(id) {
     document.getElementById("listaCheck").innerHTML = "";
@@ -47,7 +22,8 @@ function realizaVisto(id) {
     $.getJSON(getLinkCheck(), function (data) {
         var items = [];
         $.each(data, function (key, val) {
-            if (listaCamposValidosV.includes(key)) {
+            if (listaCamposValidos.includes(key)) {
+                alert(key + val);
                 if (tipo == "L") {
 
                     switch (key) {
@@ -152,20 +128,6 @@ function updateCheck(nombreCampo) {
         success: function (msg) {
             location.reload;
         }
-    });
-}
-
-function update(nombreCampo) {
-    var nombre = document.getElementById(nombreCampo).value;
-    incidencia_current[nombreCampo] = nombre;
-
-    $.ajax({
-      type: "PUT",
-      url: getLinkCheck(),
-      data: incidencia_current,
-      success: function (msg) {
-        location.reload;
-      }
     });
 }
 
