@@ -2,7 +2,12 @@
 var incidencia_current="";
 var link = window.location.href;
 var listaCamposValidos = ["nombreAlumno", "grupoAlumno", "nombreProfesor", "horarioProfesor", "descripcionIncidente", "telefonoPadres", "emailPadres"];
-
+/*
+Hacer otro array con el nombre en el mismo orden para cambiar texto
+nombreAlumno == Nombre del alumno.
+He pensado en hacer un contador y que muestre, como va el mismo orden, creo que estara guay... AUNQUE... Hay campos en Leve
+diferentes a grave... D;
+*/
 
 function realiza() {
     $.getJSON( getLink(), function (data) {
