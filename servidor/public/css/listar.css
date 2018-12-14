@@ -22,6 +22,7 @@ footer {
 .buscador {
     position: relative;
     float: right;
+    width: 500px;
 }
 
 .titulo {

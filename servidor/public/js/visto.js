@@ -1,12 +1,3 @@
-/*
-
-    vistoTutor: Boolean,
-    vistoOrientadora: Boolean,
-    vistoJefeEstudios: Boolean,
-    vistoConvivencia: Boolean
-
-
-*/
 var incidencia_current = "";
 var idMinion = "";
 var tipo = "";

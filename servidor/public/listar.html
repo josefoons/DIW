@@ -36,13 +36,9 @@
       <div class="container-fluid">
         <div>
             <h1 class="titulo">Graves</h1>
-            <table width="20%" class="buscador">
-                <tr>
-                  <td style="padding-right: 10px">
-                    <input type="text" id="buscadorGrave" onkeyup="buscarGrave()" placeholder="Introduce termino a buscar...">
-                  </td>
-                </tr>
-              </table>
+            <div id="divBuscadorG">
+              <button id="masOpcionesGrave" style="margin-top: 14px; margin-left: 10px;" onclick="buscarFiltrosGrave()">+</button>
+            </div>
         </div>
         <div id="divListaGraves">
 
@@ -52,13 +48,9 @@
       <div class="container-fluid">
           <div>
               <h1 class="titulo">Leves</h1>
-              <table width="20%" class="buscador">
-                  <tr>
-                    <td style="padding-right: 10px">
-                      <input type="text" id="buscadorLeve" onkeyup="buscarLeve()" placeholder="Introduce termino a buscar...">
-                    </td>
-                  </tr>
-                </table>
+              <div id="divBuscadorL">
+                <button id="masOpcionesLeve" style="margin-top: 14px; margin-left: 10px;" onclick="buscarFiltrosLeve()">+</button>
+              </div>
           </div>
 
         <div id="divListaLeves">
