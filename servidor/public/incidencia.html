@@ -40,7 +40,7 @@
         <div class="clearfix"></div>
 
         <!-- <form method="POST" action="http://localhost:3000/minions/"> -->
-        <form method="POST" id="formularioFaltas" action="http://localhost:3000/minions/">   
+        <form method="POST" id="formularioFaltas" action="http://localhost:3000/minions/">
 
             <div class="row">
                 <div class="col-6">
@@ -53,9 +53,20 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group row">
-                        <label for="grupoAlumno" class="col-sm-2 col-form-label">Grupo</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="grupoAlumno" class="form-control" id="grupoAlumno" placeholder="Grupo del alumno">
+                        <div class="row">
+                            <label for="grupoAlumno" class="col-2 col-form-label">Grupo</label>
+                            <div class="col-5">
+                                <input type="text" name="grupoAlumno" class="form-control" id="grupoAlumno" placeholder="Grupo del alumno">
+                            </div>
+                            <label for="grupoAlumno" style="margin-right: 10px" class="col-sm-2 col-form-label">Evaluacion</label>
+                            <div>
+                                <select class="col-sm-12 custom-select" name="eval" id="eval">
+                                    <option selected>Selecciona</option>
+                                    <option value="1">Primera</option>
+                                    <option value="2">Segunda</option>
+                                    <option value="3">Tercera</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -288,7 +299,7 @@
                     <div class="col">
                     </div>
                     <div class="col">
-                        Paiporta,  <input name="fechaHoy" value="" type="text" id="fechaFirma" readonly >
+                        Paiporta, <input name="fechaHoy" value="" type="text" id="fechaFirma" readonly>
                     </div>
                 </div>
             </div>

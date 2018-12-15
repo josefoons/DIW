@@ -49,7 +49,10 @@ exports.create = (req, res) => {
             vistoOrientadora: false,
             vistoJefeEstudios: false,
             vistoConvivencia: false,
-            habladoFamilia: false 
+            habladoFamilia: false,
+
+            /* Evaluacion */
+            evaluacion: req.body.eval || 0            
         })
 
         minion.save().then(data => {
@@ -82,7 +85,10 @@ exports.create = (req, res) => {
             vistoOrientadora: false,
             vistoJefeEstudios: false,
             vistoConvivencia: false,
-            habladoFamilia: false 
+            habladoFamilia: false,
+
+            /* Evaluacion */
+            evaluacion: req.body.eval || 0  
         })
 
         minion.save().then(data => {

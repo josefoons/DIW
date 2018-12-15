@@ -22,7 +22,10 @@ const MinionGraveSchema = mongoose.Schema({
     vistoOrientadora: Boolean,
     vistoJefeEstudios: Boolean,
     vistoConvivencia: Boolean,
-    habladoFamilia: Boolean
+    habladoFamilia: Boolean,
+
+    /* Evaluacion */
+    evaluacion: Number
 
 
 }, {
