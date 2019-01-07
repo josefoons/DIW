@@ -1,12 +1,12 @@
-#divListaLeves, #divListaGraves{
-    width: 1075px; 
-    height: 240px; 
+#divListaLeves, #divListaGraves {
+    width: 1075px;
+    height: 240px;
     overflow-y: scroll;
 }
 
 #logo {
-    width: 100%; 
-    max-width: 250px; 
+    width: 100%;
+    max-width: 250px;
     height: auto;
 }
 
@@ -17,8 +17,8 @@ footer {
     left: 0;
     padding: 1rem;
     text-align: center;
-  }
-  
+}
+
 .buscador {
     position: relative;
     float: right;
@@ -28,4 +28,23 @@ footer {
 .titulo {
     position: relative;
     float: left;
+}
+
+.filter-container {
+    display: inline;
+}
+
+.clearfix {
+    clear: both;
+    width: 100%;
+}
+
+.opciones {
+    text-align: right;
+}
+
+.tabla {
+    /* border: 1px solid black; */
+    border-spacing: 10px;
+    border-collapse: separate;
 }
