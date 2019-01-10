@@ -15,7 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "gettext.js": "^0.6.0",
     "mongoose": "^5.3.16",
     "nodemon": "^1.18.8"
   }

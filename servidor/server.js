@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const i18n = require('gettext.js');
 
 // Utilizaremos body-parser para "parsear lo que nos pidan"
 app.use(bodyParser.urlencoded({
