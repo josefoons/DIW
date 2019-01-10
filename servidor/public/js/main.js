@@ -7,10 +7,14 @@ function showDiv(elem) {
   if (elem.value == "leve") {
     document.getElementById('leve').style.display = "block";
     document.getElementById('grave').style.display = "none";
+    document.getElementById("requerido_Grave").required = false;
+    document.getElementById("requerido_Leve").required = true;
   } else {
     if (elem.value == "grave") {
       document.getElementById('leve').style.display = "none";
       document.getElementById('grave').style.display = "block";
+      document.getElementById("requerido_Grave").required = true;
+      document.getElementById("requerido_Leve").required = false;
     }
   }
 }

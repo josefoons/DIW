@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -45,7 +45,8 @@
                     <div class="form-group row">
                         <label for="alumnoNombre" class="col-sm-2 col-form-label">Alumno</label>
                         <div class="col-sm-10">
-                            <input name="nombreAlumno" maxLength="30" type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno">
+                            <input name="nombreAlumno" maxLength="30" type="text" class="form-control" id="alumnoNombre"
+                                placeholder="Nombre del alumno">
                         </div>
                     </div>
                 </div>
@@ -123,7 +124,8 @@
             <hr>
             <div id="botonesFalta">
                 <h4> Tipo de Falta
-                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center" required>
+                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center"
+                        required>
                         <option value="0" hidden>Selecciona falta</option>
                         <option value="leve">Leve</option>
                         <option value="grave">Greu</option>
@@ -135,7 +137,7 @@
 
                 <p>Tipificacio (1) de l'incident segons l'article 42:</p>
 
-                <select class="custom-select" name="tipificacion" multiple required>
+                <select class="custom-select" id="requerido_Grave" name="tipificacion" multiple >
                     <option value="1">Els actes greus d'indisciplina i les injuries i ofenses contra membres de la
                         comunitat educativa que sobrepassen incorrecció o la desconsideració previstes en el article
                         35.</option>
@@ -245,42 +247,44 @@
                 <br />
                 <div>
                     <p>Tipificacio (3) de l'incident segons l'article 35:</p>
-                <select class="custom-select" name="tipificacion" multiple required>
-                        <select class="custom-select" name="tipificacion" multiple >
+                    <select class="custom-select" id="requerido_Leve" name="tipificacion" multiple required>
                         <option value="1">Les faltes de puntualitat injustificades</option>
                         <option value="2">Les faltes d'assistència injustificades</option>
-                        <option value="3">Els actes que alteren el normal desenvolupament de les activitats del centre
-                            educatiu, especialment els que alteren el normal desenvolupament de les classes</option>
+                        <option value="3">Els actes que alteren el normal desenvolupament de les activitats del
+                            centre educatiu, especialment els que alteren el normal desenvolupament de les classes</option>
                         <option value="4">Els actes d'indisciplina</option>
-                        <option value="5">Els actes d'incorreció o desconsideració, les injúries i les ofenses contra
-                            els membres de la comunitat educativa</option>
+                        <option value="5">Els actes d'incorreció o desconsideració, les injúries i les ofenses
+                            contra els membres de la comunitat educativa</option>
                         <option value="6">El furt o deteriorament intencionat d'inmobles, materials, documentació o
                             recursos del centre</option>
-                        <option value="7">El furt o deteriorament intencionat dels béns o materials dels membres de la
-                            comunitat educativa</option>
-                        <option value="8">Les accions que puguen ser perjudicials per a la integritat i la salut dels
-                            membres de la comunitat educativa</option>
-                        <option value="9">La negativa sistemàtica a portar el material necessari per al desenvolupament
-                            del procés d'ensenyament-aprenentatge</option>
-                        <option value="10">La negativa a traslladar la informació facilitada als pares, mares, tutors o
-                            tutores per part del centre i viceversa</option>
-                        <option value="11">L'alteració o manipulació de la documentació facilitada als pares, mares,
+                        <option value="7">El furt o deteriorament intencionat dels béns o materials dels membres de
+                            la comunitat educativa</option>
+                        <option value="8">Les accions que puguen ser perjudicials per a la integritat i la salut
+                            dels membres de la comunitat educativa</option>
+                        <option value="9">La negativa sistemàtica a portar el material necessari per al
+                            desenvolupament del procés d'ensenyament-aprenentatge</option>
+                        <option value="10">La negativa a traslladar la informació facilitada als pares, mares,
+                            tutors o tutores per part del centre i viceversa</option>
+                        <option value="11">L'alteració o manipulació de la documentació facilitada als pares,
+                            mares,
                             tutors o tutores per part del centre</option>
                         <option value="12">La suplantació de la personalitat dels membres de la comunitat escolar.</option>
-                        <option value="13">La utilització inadequada de les tecnologies de la informació i comunicació
-                            durant les activitats que es realitzen al centre educatiu</option>
-                        <option value="14">L'ús de telèfons mòbils, aparells de so i altres aparells electrònics aliens
-                            al procés d'ensenyament-aprenentatge. Durant les activitats que es realitzen al centre
+                        <option value="13">La utilització inadequada de les tecnologies de la informació i
+                            comunicació durant les activitats que es realitzen al centre educatiu</option>
+                        <option value="14">L'ús de telèfons mòbils, aparells de so i altres aparells electrònics
+                            aliens al procés d'ensenyament-aprenentatge. Durant les activitats que es realitzen al
+                            centre
                             educatiu</option>
-                        <option value="15">Els actes que dificulten o impedisquen el dret i el deure d l'estudi dels
-                            seus companys i companyes</option>
+                        <option value="15">Els actes que dificulten o impedisquen el dret i el deure d l'estudi
+                            dels seus companys i companyes</option>
                         <option value="16">La incitació o estímul a cometre una falta contrària a les normes de
                             convivència.</option>
                         <option value="17">La negativa al compliment de les mesures correctores adoptades davant de
                             conductes contràries a les normes de convivència</option>
-                        <option value="18">L'ús inadequat de les infraestructures i béns o equips materials del centre</option>
-                        <option value="19">La desobediència en el compliment de les normes de caràcter propi del centre
-                            i que estiguen incloses en el seu projecte educatiu</option>
+                        <option value="18">L'ús inadequat de les infraestructures i béns o equips materials del
+                            centre</option>
+                        <option value="19">La desobediència en el compliment de les normes de caràcter propi del
+                            centre i que estiguen incloses en el seu projecte educatiu</option>
                     </select>
                 </div>
             </div>
