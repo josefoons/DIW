@@ -38,8 +38,6 @@
             <img class="w-25 p-3 float-right" src="img/generalitat.jpg">
         </div>
         <div class="clearfix"></div>
-
-        <!-- <form method="POST" action="http://localhost:3000/minions/"> -->
         <form method="POST" id="formularioFaltas" action="http://localhost:3000/minions/">
 
             <div class="row">
@@ -47,7 +45,7 @@
                     <div class="form-group row">
                         <label for="alumnoNombre" class="col-sm-2 col-form-label">Alumno</label>
                         <div class="col-sm-10">
-                            <input name="nombreAlumno" type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno">
+                            <input name="nombreAlumno" maxLength="30" type="text" class="form-control" id="alumnoNombre" placeholder="Nombre del alumno">
                         </div>
                     </div>
                 </div>
@@ -60,7 +58,7 @@
                             </div>
                             <label for="grupoAlumno" style="margin-right: 10px" class="col-sm-2 col-form-label">Evaluacion</label>
                             <div>
-                                <select class="col-sm-12 custom-select" name="eval" id="eval">
+                                <select class="col-sm-12 custom-select" name="eval" id="eval" required>
                                     <option selected>Selecciona</option>
                                     <option value="1">Primera</option>
                                     <option value="2">Segunda</option>
@@ -76,7 +74,7 @@
                     <div class="form-group row">
                         <label for="alumnoProfesor" class="col-sm-2 col-form-label">Profesor/a</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nombreProfesor" class="form-control" id="alumnoProfesor"
+                            <input type="text" maxLength="30" name="nombreProfesor" class="form-control" id="alumnoProfesor"
                                 placeholder="Nombre del Profesor">
                         </div>
                     </div>
@@ -125,8 +123,7 @@
             <hr>
             <div id="botonesFalta">
                 <h4> Tipo de Falta
-                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center"
-                        required>
+                    <select name="tipoFalta" id="tipoFalta" onchange="showDiv(this)" selected="0" class="col-sm-10 control-label text-center" required>
                         <option value="0" hidden>Selecciona falta</option>
                         <option value="leve">Leve</option>
                         <option value="grave">Greu</option>
@@ -138,7 +135,7 @@
 
                 <p>Tipificacio (1) de l'incident segons l'article 42:</p>
 
-                <select class="custom-select" name="tipificacion" multiple>
+                <select class="custom-select" name="tipificacion" multiple required>
                     <option value="1">Els actes greus d'indisciplina i les injuries i ofenses contra membres de la
                         comunitat educativa que sobrepassen incorrecció o la desconsideració previstes en el article
                         35.</option>
@@ -248,7 +245,8 @@
                 <br />
                 <div>
                     <p>Tipificacio (3) de l'incident segons l'article 35:</p>
-                    <select class="custom-select" name="tipificacion" multiple>
+                <select class="custom-select" name="tipificacion" multiple required>
+                        <select class="custom-select" name="tipificacion" multiple >
                         <option value="1">Les faltes de puntualitat injustificades</option>
                         <option value="2">Les faltes d'assistència injustificades</option>
                         <option value="3">Els actes que alteren el normal desenvolupament de les activitats del centre
@@ -303,22 +301,6 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" name="vistoProfesor" type="checkbox" id="vistoProfesor">
-                        <label>Signatura del professor/a.</label>
-                    </div>
-                </div>
-                <div class="col">
-
-                    <div class="form-check">
-                        <input class="form-check-input" name="vistoDirector" type="checkbox" id="vistoDirector">
-                        <label>Signatura del cap d'estudis/director.</label>
-                    </div>
-                </div>
-            </div> -->
             <br />
             <input type="submit" value="Enviar" />
 

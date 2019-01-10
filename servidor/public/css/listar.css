@@ -10,21 +10,6 @@
     height: auto;
 }
 
-footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-}
-
-.buscador {
-    position: relative;
-    float: right;
-    width: 500px;
-}
-
 .titulo {
     position: relative;
     float: left;
@@ -39,12 +24,6 @@ footer {
     width: 100%;
 }
 
-.opciones {
-    text-align: right;
-}
-
-.tabla {
-    /* border: 1px solid black; */
-    border-spacing: 10px;
-    border-collapse: separate;
+.tablaEx {
+    width: 100%;
 }

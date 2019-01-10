@@ -16,7 +16,6 @@
 
   <script src="js/listar.js"></script>
   <script src="js/visto.js"></script>
-  <script src="js/multifilter.js"></script>
   <link rel="stylesheet" type="text/css" href="css/listar.css">
 </head>
 
@@ -37,13 +36,10 @@
       <div class="container-fluid">
         <div>
           <h1 class="titulo">Graves</h1>
-          <div id="divBuscadorG">
-            <button id="masOpcionesGrave" style="margin-top: 14px; margin-left: 10px;" onclick="buscarFiltrosGrave()">+</button>
-          </div>
         </div>
       </div>
       <div id="divListaGraves">
-        <table class="tabla">
+        <table class="tablaEx">
           <tbody id="divListaGravesLista">
           </tbody>
         </table>
@@ -52,19 +48,17 @@
       <div class="container-fluid">
         <div>
           <h1 class="titulo">Leves</h1>
-          <div id="divBuscadorL">
-            <button id="masOpcionesLeve" style="margin-top: 14px; margin-left: 10px;" onclick="buscarFiltrosLeve()">+</button>
-          </div>
-        </div>
-  
-        <div id="divListaLeves">
-          <table class="tabla">
-            <tbody id="divListaLeveLista">
-            </tbody>
-          </table>
         </div>
       </div>
+
+      <div id="divListaLeves">
+        <table class="tablaEx">
+          <tbody id="divListaLeveLista">
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
   </div>
 
 
