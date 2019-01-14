@@ -1,0 +1,20 @@
+ul {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #F6F3EA;
+    font-family: Avenir, Heveltica, Arial, san-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+li {
+    padding: 1em;
+    background: #F9423A;
+}
