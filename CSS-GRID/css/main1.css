@@ -1,0 +1,67 @@
+.container {
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 75px 350px 50px;
+    grid-template-areas: "m m h h h h h h h h h h" "m m c c c c c c c c l l" "f f f f f f f f f f f f";
+}
+
+.header {
+    grid-area: h;
+    background-color: magenta;
+}
+
+.menu {
+    grid-area: m;
+    background-color: blue;
+}
+
+.contenido {
+    grid-area: c;
+    background-color: green;
+}
+
+.footer {
+    grid-area: f;
+    background-color: yellow;
+}
+
+.listadoLateral {
+    grid-area: l;
+    background-color: red;
+}
+
+.contenidoGeneral {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 340px;
+    grid-template-areas: "uno dos tres" "uno dos tres";
+}
+
+.galleta1 {
+    grid-area: uno;
+    background: url("../img/galleta1.png");
+    background-repeat: no-repeat;
+}
+
+.galleta2 {
+    grid-area: dos;
+    background: url("../img/galleta2.png");
+    background-repeat: no-repeat;
+}
+
+.galleta3 {
+    grid-area: tres;
+    background: url("../img/galleta3.png");
+    background-repeat: no-repeat;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
