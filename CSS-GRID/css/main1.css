@@ -25,7 +25,7 @@
 
 
 /* MENU */
-.menu {
+.menuLateral {
     grid-area: m;
     background-color: lightblue;
     padding: 10px;
@@ -101,7 +101,7 @@
 
 /* Lateral */
 
-.listadoLateral {
+.carritoCompra {
     grid-area: l;
     background-color: lightblue;
     border-radius: 10px;

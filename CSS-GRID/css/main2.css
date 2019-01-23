@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-gap: 7px;
+    grid-gap: 5px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 75px 225px 225px 125px 25px;
     grid-template-areas: "m m h h h h h h h h h h" "m m c c c c c c c c c c" "m m c c c c c c c c c c" "m m k k k k k k k k k k" "f f f f f f f f f f f f";
@@ -15,6 +15,15 @@ body {
     background-color: red;
 }
 
+.menuImagenes {
+    text-align: center;
+}
+
+.menuImagenes img {
+    height: 200px;
+    width: 200px; 
+    
+}
 .header {
     grid-area: h;
     background-image: url("../img/banner.jpg");
@@ -34,7 +43,7 @@ body {
     right: 10px;
 }
 
-.contenidoGeneral {
+.contenido {
     grid-area: c;
     background-color: green;
 }
@@ -42,10 +51,56 @@ body {
 .carritoCompra {
     grid-area: k;
     background-color: violet;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 120px;
+    grid-template-areas: "item1 item2 item3";
 }
 
 .footer {
     grid-area: f;
     color: white;
     text-align: center;
+}
+
+.contenidoGeneral {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 340px;
+    grid-template-areas: "uno dos tres" "uno dos tres";
+    border-radius: 10px;
+}
+
+#galleta1 {
+    grid-area: uno;
+    background: url("../img/galleta1.png");
+    background-repeat: no-repeat;
+}
+
+#galleta2 {
+    grid-area: dos;
+    background: url("../img/galleta2.png");
+    background-repeat: no-repeat;
+}
+
+#galleta3 {
+    grid-area: tres;
+    background: url("../img/galleta3.png");
+    background-repeat: no-repeat;
+}
+
+.carritoCompra img {
+    height: 120px;
+    width: 120px; 
+}
+
+#carrito {
+    position: relative;
+}
+
+#carrito img {
+    position: absolute;
+    right: 100px;
 }
