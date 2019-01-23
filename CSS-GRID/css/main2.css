@@ -1,0 +1,51 @@
+.container {
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 75px 225px 225px 125px 25px;
+    grid-template-areas: "m m h h h h h h h h h h" "m m c c c c c c c c c c" "m m c c c c c c c c c c" "m m k k k k k k k k k k" "f f f f f f f f f f f f";
+}
+
+body {
+    background-color: black;
+}
+
+.menuLateral {
+    grid-area: m;
+    background-color: red;
+}
+
+.header {
+    grid-area: h;
+    background-image: url("../img/banner.jpg");
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+}
+
+.header h1 {
+    position: absolute;
+    right: 10px;
+}
+
+.contenidoGeneral {
+    grid-area: c;
+    background-color: green;
+}
+
+.carritoCompra {
+    grid-area: k;
+    background-color: violet;
+}
+
+.footer {
+    grid-area: f;
+    color: white;
+    text-align: center;
+}
