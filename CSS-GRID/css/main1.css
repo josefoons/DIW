@@ -2,33 +2,58 @@
     display: grid;
     grid-gap: 7px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 75px 350px 50px;
-    grid-template-areas: "m m h h h h h h h h h h" "m m c c c c c c c c l l" "f f f f f f f f f f f f";
+    grid-template-rows: 175px 450px 50px;
+    grid-template-areas: "h h h h h h h h h h h h" "m m c c c c c c c c l l" "f f f f f f f f f f f f";
 }
 
 .header {
     grid-area: h;
-    background-color: magenta;
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
+.header h1 {
+    color: white;
+    position: absolute;
+    right: 10px;
+}
+
+.header h3 {
+    color: white;
+    position: absolute;
+    right: 10px;
+}
 .menu {
     grid-area: m;
-    background-color: blue;
+    background-color: lightblue;
+    padding: 10px;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 143px 143px 143px;
+    grid-template-areas: "menuA" "menuB" "menuC";
 }
 
 .contenido {
     grid-area: c;
-    background-color: green;
+    background-color: lightblue;
+    padding-left: 60px;
+    padding-top: 60px;
 }
 
 .footer {
     grid-area: f;
-    background-color: yellow;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
 }
 
 .listadoLateral {
     grid-area: l;
-    background-color: red;
+    background-color: lightblue;
 }
 
 .contenidoGeneral {
@@ -39,23 +64,69 @@
     grid-template-areas: "uno dos tres" "uno dos tres";
 }
 
-.galleta1 {
+.allMenu {
+    margin-top: 30px;
+}
+
+#galleta1 {
     grid-area: uno;
     background: url("../img/galleta1.png");
     background-repeat: no-repeat;
 }
 
-.galleta2 {
+#galleta2 {
     grid-area: dos;
     background: url("../img/galleta2.png");
     background-repeat: no-repeat;
 }
 
-.galleta3 {
+#galleta3 {
     grid-area: tres;
     background: url("../img/galleta3.png");
     background-repeat: no-repeat;
 }
+
+#carrito {
+    text-align: center;
+}
+
+.tituloMenu {
+    grid-area: tituloMenu;
+    background-color: lightcoral;
+}
+
+h4,.tituloMenu {
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+.menuA {
+    grid-area: menuA;
+    background-color: lightgreen;
+}
+
+.menuB {
+    grid-area: menuB;
+    background-color: lightgreen;
+}
+
+.menuC {
+    grid-area: menuC;
+    background-color: lightgreen;
+}
+
+.menuImagenes {
+    text-align: center;
+}
+
+.menuImagenes img  {
+    height: 120px;
+    width: 120px;
+    margin-top: 10px;
+}
+
+
+/* Etiquetas normales */
 
 ul {
     list-style-type: none;
@@ -64,4 +135,8 @@ ul {
 img {
     height: 100px;
     width: 100px;
+}
+
+body {
+    background-color: black;
 }
