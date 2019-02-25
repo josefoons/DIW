@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Cafetera de DAW</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css" />
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+</head>
+
+<body style="margin: 0 1em;">
+  <div id="main">
+    <h1>Cafetera de DAW <em>Calculadora de Cambio</em></h1>
+    <h2>
+      Calcula el cambio en (<em>monedas</em>) a devolver cuando compramos
+      algo.
+    </h2>
+  </div>
+
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <!--Cargamos el entorno de pruebas qunit -->
+  <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+  <script>
+
+    function devolverCambio(total, precio) {
+      var monedas = [200, 100, 50, 20, 10, 5, 2, 1];
+      var cambio = new Array();
+      total = total - precio;
+      if (total != 0) {
+        for (let i = 0; i < monedas.length; i++) {
+          if (total >= monedas[i]) {
+            cambio[i] = Math.floor(total / monedas[i]);
+            total = total - (cambio[i] * monedas[i]);
+          }
+        }
+      }
+
+      return cambio;
+    }
+
+    test("Devuelve cambio", function (assert) {
+      var result = devolverCambio();
+      var buscado = [];
+      assert.deepEqual(result, buscado);
+    });
+
+    test("Cambio justo", function (assert) {
+      var result = devolverCambio(408, 20);
+      var buscado = [1, 1, 1, 1, 1, 1, 1, 1];
+      assert.deepEqual(result, buscado);
+    });
+
+  </script>
+</body>
+
+</html>

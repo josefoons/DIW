@@ -1,0 +1,18 @@
+li:nth-child(3n):before {
+    color: green;
+    content: "Fizz";
+}
+
+li:nth-child(5n):before {
+    color: red;
+    content: "Buzz";
+}
+
+li:nth-child(15n):before {
+    color: grey;
+    content: "FizzBuzz";
+}
+
+ol li:nth-child(15n),li:nth-child(5n),li:nth-child(3n) {
+    list-style:none 
+}
